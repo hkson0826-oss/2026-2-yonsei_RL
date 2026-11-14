@@ -1,50 +1,66 @@
-# 연세대 연계 마을버스 노선 설계
+# 연세대 강화학습 프로젝트 · 4번 역할 연구 자료
 
-팀 정제본에서 정류장 ID가 112로 시작하는 서대문구 정류장 282곳을 모두 사용한다.
-`network.json`은 정류장(01), 월별 하차량(02), 방향별 도로거리 ZIP(11)을 ID로 연결한 입력이다. 원본이 바뀌면 `python3 prepare.py "/path/to/data-folder"`로 다시 생성한다. 기존 정제본의 마을버스 정차 제한 표시가 있는 23곳도 실험 후보에 포함된다.
-배경 지도는 OpenStreetMap이다.
+서대문구 정류장 맵, 오전 7–9시 하차 실적, 철도역·연대앞 거점, 방향별 거리와 보상 설계를 정리한 저장소입니다. **모델 구현·학습·성능 비교는 이번 작업 범위에 포함하지 않았습니다.**
 
-## 실행
+## 바로 보기
 
-Python 3.9 이상에서 Q-learning, SARSA, 기준 전략을 바로 실행할 수 있다.
-DQN은 PyTorch가 필요하다. GPU 머신에는 CUDA를 지원하는 PyTorch를 설치한다.
+- [최종 연구 리포트](docs/ROLE4_FINAL_REPORT.md)
+- [정류장 지도 HTML](output/role4/station_map.html) — 파일을 내려받아 브라우저로 열 수 있습니다. 좌표도·데이터·검색은 오프라인이며 도로 배경만 선택적으로 인터넷을 사용합니다.
+- [모델·발표 담당자용 인계](docs/ROLE4_HANDOFF.md)
+- [수요·거점·보상 명세](docs/research/DATA_REWARD_SPEC.md)
+- [연구일지](docs/research/RESEARCH_LOG.md), [선행연구 분석](docs/research/LITERATURE_REVIEW.md), [독립 검토](docs/research/REVIEWS.md)
+- [에이전트 지침](AGENTS.md), [팀 운영 기준](ORCHESTRATION.md)
 
-```sh
-python3 train.py --algo q-learning --episodes 5 --rounds-per-episode 20
+![정류장 좌표도 미리보기](output/role4/map_preview.png)
+
+미리보기는 생성 SVG의 정적 렌더링입니다. 점은 정류장, 주황 테두리는 거점 배정, 붉은 테두리는 중앙차로입니다. 실제 행정경계나 버스 도로 주행선이 아닙니다.
+
+## 확인된 자료 범위
+
+| 항목 | 개수·상태 |
+| --- | --- |
+| 공식 ARS 구역 13 정류장 | 464개, 2026-09-02 목록 기준 |
+| 월별 수요 관측 | 매월 454개, 같은 10개는 기록 부재 |
+| 방향별 도로비용 | 292개 내부 84,972쌍 |
+| 전체 목록에서 미확보 도로비용 | 129,860쌍, null 유지 |
+| 기본 거점 배정 | 300m 직선 반경, 103개 정류장·14그룹 |
+| 전체 지역 모델 입력 준비 | **false** |
+
+기존 282개는 이 공식 목록의 약 61%입니다. 내부 ID 112 접두어는 구 전체를 나타내지 못합니다. 이번 기준 역시 ARS 코드 기반의 시점 고정 목록이며 행정경계 폴리곤이나 현재 실제 운행 상태를 인증한 목록은 아닙니다.
+
+수요는 기존 하차 실적의 대리 지표이며 신규 승객 수 예측이 아닙니다. 반경·보상 가중치는 명시적인 연구 가정입니다. 도로거리의 정차·회전·유턴 적합성은 미검증이고, 결측을 0이나 직선거리로 채우지 않았습니다.
+
+## 데이터와 재생성
+
+- `data/reference/`: 공식 자료·수요 재집계·출처
+- `data/processed/role4_bundle.json`: 464개 공통 인덱스와 지도·인계 데이터
+- `data/processed/stop_master.csv`, `ridership.csv`, `hub_mapping.csv`: 표 형태 산출물
+- `docs/notion/`: 제공된 노션 원문과 첨부 자료
+- `docs/evidence/`: 계산·자료 검증 근거
+
+Python 데이터 변환은 표준 라이브러리를 사용합니다. 원본 자료가 있는 상태에서는 다음 명령으로 네트워크 없이 다시 생성합니다.
+
+```powershell
+python scripts/build_role4_roads.py
+python scripts/build_role4_data.py
+python scripts/build_role4_map.py
 ```
 
-VS Code에서 `train.py`를 열고 **Run Python File**을 눌러도 된다. 실행하면 기본 브라우저가 열리고 버스 아이콘이 학습 중 생성한 경로를 순서대로 재생한다. 브라우저가 자동으로 열리지 않으면 터미널에 출력된 주소를 연다. 학습 종료 후에도 지도를 볼 수 있으며, 터미널에서 Ctrl+C를 누르면 종료한다. 지도 타일과 Leaflet에는 인터넷 연결이 필요하다. 선과 아이콘의 이동은 정류장 좌표를 직선으로 연결하며, 보상에 쓰는 거리는 도로거리 행렬 값이다.
+검증:
 
-```sh
-python3 train.py --algo sarsa --steps 3000 --out runs/sarsa
-python3 -m pip install -r requirements.txt
-python3 train.py --algo dqn --steps 5000 --device cpu --out runs/dqn
-python3 train.py --algo random --episodes 5 --rounds-per-episode 20 --out runs/random
-python3 train.py --algo greedy --episodes 1 --rounds-per-episode 1 --out runs/greedy
-python3 train.py --algo dp --max-stops 12 --episodes 1 --rounds-per-episode 1 --out runs/dp
+```powershell
+python -m pip install -r requirements-research.txt
+python -m pytest tests -q
+npm ci
+npm run test:map
 ```
 
-지도는 현재 실행의 출력 폴더를 자동으로 읽는다. 실험별로 별도의 `--out`을 지정한다. GPU 서버나 일괄 실험에서는 `--no-viewer`를 붙이면 학습이 끝난 뒤 바로 종료된다.
-대규모 비교 시 세 RL 방식에 각각 동일한 `--steps 200000`, 설정, 시드 목록을 적용한다. CUDA에서는 `--device cuda`를 사용한다.
-DP 최적해와 비교할 때는 모든 방식에 같은 `--max-stops`를 지정한다. 후보 제한은 후보표 앞부분을 사용한다.
+Python 검증 환경은 3.13, DOM 검증은 Node 24에서 확인했습니다. jsdom은 Node 20.19 / 22.13 이상 또는 24 이상을 지원합니다. DOM 검사는 실제 브라우저 화면 배치 검사를 대신하지 않습니다. 상세 검증 범위는 인계 문서에 적었습니다.
 
-## 환경과 보상
+추가 원자료 확보·독립 감사가 필요할 때는 `scripts/fetch_role4_ridership.py`와 `scripts/audit_role4.py`를 사용합니다. 새 유료 서비스나 API 키는 필요하지 않습니다.
 
-- 상태는 현재 정류장, 방문 집합, 남은 거리다. 다음 정류장을 선택하면 방향별 도로거리를 차감한다.
-- 거리를 더하면 상한을 넘는 정류장과 이미 방문한 정류장을 제외한다. 가능한 이동이 없으면 현재 정류장에서 종료한다.
-- 수요 점수는 5–8월 오전 7–9시 월간 하차량을 월 일수로 나누고, 월별 일평균의 평균을 후보 내 최댓값으로 나눈다. 9–10월 값은 학습된 노선의 월별 경유지 하차량 평가에 사용한다.
-- 점수 = 경유 정류장별 정규화 하차량 + 최초 거점 방문당 2점 − 도로거리 1km당 0.2점. 출발점 하차 점수는 제외하고 마지막 정류장 하차 점수는 포함한다.
-- 이동 가능한 일반 정류장 중 `--start-seed`로 5곳을 한 번 뽑아 `starts.json`에 시드와 ID를 저장한다. 같은 후보와 거리 상한에서 같은 출발 시드를 사용하면 재현된다. `--seed`는 학습 난수용이다.
-- 한 라운드에 저장한 출발점 5곳 중 하나를 뽑아 경로 1개를 생성한다. 기본 20라운드가 한 에피소드이며 기본 5에피소드에서 학습을 종료한다. 종점은 마지막으로 선택한 정류장이다. 기본 거리 상한은 6,000m이며 `--budget-m`으로 설정한다.
-- 신촌·이대·아현·연대앞 각 거점에 처음 정차할 때 보너스를 준다. 거점의 대표 정류장 ID는 `prepare.py`에서 관리한다.
-- 하차량은 기존 이용 실적이다. 거리 자료는 실제 마을버스의 회전 및 정차 가능성까지 검증한 값으로 해석하지 않는다.
+## 기존 모델과 출처
 
-## 비교 방식과 출력
+기존 모델 코드는 [Gyuhongcho/26-2-RL](https://github.com/Gyuhongcho/26-2-RL)의 `aca14c9` 상태를 바탕으로 보존했습니다. [원래 모델 README](docs/UPSTREAM_MODEL_README.md)는 기존 실행 방식의 참고 자료입니다. 원래 `train.py`와 `network.json`은 이번 명세에 맞게 변경하지 않았습니다. 새 통합 자료를 그대로 기존 모델에 넣으면 안 되며 입력 연결은 모델 담당자의 별도 작업입니다.
 
-Q-learning과 SARSA는 동일한 상태 표현으로 각각 다음 상태의 최대 Q와 다음에 실제 선택한 행동의 Q를 사용한다. DQN은 128–128 MLP, 경험 재생, 타깃 네트워크와 유효 행동 마스크를 사용한다. 세 방법 모두 `--exploration epsilon-greedy` 또는 `--exploration greedy`를 선택한다. 기준 탐욕법은 이용량 점수와 신규 거점 보너스의 합을 이번 이동거리로 나눈다. DP는 작은 후보 집합에서 벨만 최적값을 메모이제이션한다.
-
-`history.jsonl`에는 모든 경로를, `episode_winners.json`에는 에피소드별 최고 보상 경로를 저장한다. 지도에서 **최고 보상 노선 보기**를 누르면 최신 에피소드 우승 경로를 재생한다. 모델은 `model.pt` 또는 `q_table.json`에 저장된다.
-`--steps`를 지정하면 전이 예산에 맞춰 학습하고 마지막으로 진행 중이던 노선을 완성한다. 마지막 에피소드는 설정한 라운드 수보다 짧을 수 있다.
-
-병렬 실험 명령은 [PARALLEL_EXPERIMENTS.txt](PARALLEL_EXPERIMENTS.txt)에 정리했다.
-학습 종료 후 **🏆 전체 최고 노선**을 누르면 실행 전체에서 보상이 가장 높았던 경로를 지도에 고정한다. 화면 없이 돌린 실험도 `python3 train.py --replay runs/dqn-42`로 열 수 있다.
+서울시 공개 자료·KRIC 자료의 원문 URL과 버전·해시는 provenance 파일에 있습니다. 논문은 서지와 무료 원문 링크를 제공하며, 재배포 허가를 확인하지 않은 논문 전문은 공개 저장소에 포함하지 않습니다. 제3자 자료에 새로운 라이선스를 부여하지 않습니다.

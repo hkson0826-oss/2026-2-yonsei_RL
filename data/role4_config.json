@@ -1,0 +1,114 @@
+{
+  "schema_version": "role4-design-1.0",
+  "decision_status": "C2_design_passed",
+  "snapshot_date_kst": "2026-11-15",
+  "sources": {
+    "stops": "data/reference/seodaemun_bus_stops_official.csv",
+    "ridership": "data/reference/seodaemun_ridership_202605_202610.csv",
+    "hub_anchors": "data/reference/hub_anchors_official.csv",
+    "roads": "data/processed/road_distances_full.json",
+    "road_snap": "data/processed/road_snap.csv",
+    "ridership_provenance": "data/reference/ridership_provenance.json",
+    "spatial_provenance": "data/reference/spatial_sources.json"
+  },
+  "universe": {
+    "membership_method": "official_ARS_prefix13",
+    "coordinate_system": "WGS84_EPSG4326",
+    "expected_stop_count": 464,
+    "retain_all_stops": true,
+    "id_type": "string",
+    "id_order": "station_id_lexicographic_ascending",
+    "polygon_membership_verified": false
+  },
+  "demand": {
+    "train_months": [
+      "202605",
+      "202606",
+      "202607",
+      "202608"
+    ],
+    "validation_months": [
+      "202609",
+      "202610"
+    ],
+    "hour_columns": [
+      "alight_07",
+      "alight_08"
+    ],
+    "monthly_total_column": "alight_07_09",
+    "aggregation": "sum_train_monthly_alight_divided_by_sum_calendar_days",
+    "expected_train_days": 123,
+    "require_all_train_months": true,
+    "normalization": "max_only",
+    "normalizer_population": "all_official_stops_with_complete_train_records_including_central_lanes",
+    "normalizer_fixed_across_candidate_filters": true,
+    "expected_normalizer_daily_alight": 847.7886178861788,
+    "normalizer_zero_policy": "all_observed_scores_zero",
+    "validation_aggregation": "monthly_alight_divided_by_month_calendar_days_then_fixed_train_max",
+    "clip_validation": false,
+    "missing_policy": "null_not_zero",
+    "round_for_storage": false,
+    "interpretation": "historical_alight_activity_proxy_not_new_ridership_or_OD"
+  },
+  "hubs": {
+    "radius_m": 300.0,
+    "sensitivity_radii_m": [
+      200.0,
+      300.0,
+      500.0
+    ],
+    "distance_method": "haversine",
+    "earth_radius_m": 6371008.8,
+    "group_distance": "minimum_distance_to_any_anchor_in_group",
+    "assignment": "nearest_single_hub_group_within_radius",
+    "tie_break": "distance_then_hub_id_then_anchor_id",
+    "radius_inclusive": true,
+    "unassigned_hub_id": null,
+    "assign_reference_stops_even_if_excluded": true,
+    "overlap_reporting": "retain_all_in_radius_groups_for_diagnostics_but_reward_single_assignment",
+    "coordinate_caveat": "rail_station_reference_points_not_entrances_and_yonsei_bus_points_not_surveyed_gate",
+    "interpretation": "straight_line_screening_not_verified_walking_transfer_access"
+  },
+  "stop_policy": {
+    "exclude_types": [
+      "중앙차로"
+    ],
+    "exclusion_is_assumption": true,
+    "keep_excluded_on_reference_map": true,
+    "distance_quality_filter": "flag_only_no_automatic_exclusion",
+    "diagnostic_subset_only": "noncentral_and_complete_train_and_road_source_covered",
+    "diagnostic_subset_is_full_district": false
+  },
+  "reward": {
+    "demand_weight": 1.0,
+    "hub_bonus": 0.5,
+    "distance_cost_per_km": 0.2,
+    "distance_unit_in_data": "metres",
+    "start_demand_reward": false,
+    "start_hub_bonus": false,
+    "start_group_previsited": true,
+    "endpoint_mode": "free_terminal",
+    "final_stop_demand_reward": true,
+    "group_bonus_policy": "first_visit_only",
+    "repeat_stop_policy": "not_allowed",
+    "null_distance_or_demand_policy": "reward_undefined_never_impute_zero",
+    "zero_off_diagonal_policy": "preserve_source_value_and_flag",
+    "weight_interpretation": "explicit_project_preferences_not_optimized_or_literature_optima",
+    "legacy_alternative_hub_bonus": 2.0
+  },
+  "readiness": {
+    "reference_complete": true,
+    "demand_full": false,
+    "road_full": false,
+    "operational_verified": false,
+    "full_district_model_ready": false,
+    "expected_complete_train_stop_count": 454,
+    "expected_missing_train_stop_count": 10,
+    "expected_road_source_covered_stop_count": 292,
+    "known_missing_distance_pairs": 129860,
+    "expected_diagnostic_subset_stop_count": 259,
+    "bus_drivability_verified": false,
+    "existing_train_py_compatible_without_adaptation": false,
+    "partial_distances_are_unknown_not_impassable": true
+  }
+}

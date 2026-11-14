@@ -1,0 +1,77 @@
+{
+  "title": "데이터 수집 및 전처리—성선",
+  "source_url": "https://app.notion.com/p/415233a79de48067918bcef103c3cc03?source=copy_link",
+  "page_id": "415233a7-9de4-8067-918b-cef103c3cc03",
+  "snapshot_date": "2026-11-15",
+  "timezone": "Asia/Seoul",
+  "method": "Notion native app Export: Markdown & CSV; all content",
+  "connector_status": "404 object_not_found in connected agora workspace; recovered through authenticated native Notion app",
+  "export_archive": "01_data_preprocessing_export.zip",
+  "markdown_file": "01_data_preprocessing/데이터 수집 및 전처리—성선 415233a79de48067918bcef103c3cc03.md",
+  "file_count": 9,
+  "attachment_count": 8,
+  "missing_local_links": [],
+  "nested_zip_checks": [
+    {
+      "path": "01_data_preprocessing/11_road_distance_part1.zip",
+      "bad_crc_member": null,
+      "members": [
+        "11_road_distance_part1.csv"
+      ]
+    },
+    {
+      "path": "01_data_preprocessing/11_road_distance_part2.zip",
+      "bad_crc_member": null,
+      "members": [
+        "11_road_distance_part2.csv"
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "01_data_preprocessing/01_region_stations_clean.csv",
+      "bytes": 105837,
+      "sha256": "cc546237366f6a2462362e1891af37a49726a9d5c3aa1ab6cfd82d47f0a31b50"
+    },
+    {
+      "path": "01_data_preprocessing/02_region_ridership_7to9_monthly.csv",
+      "bytes": 439240,
+      "sha256": "2450b36f1041286ff4e21428ed1afa50802c2a45daca88094b698ff13f88bc8d"
+    },
+    {
+      "path": "01_data_preprocessing/08_remaining_validation_notes.csv",
+      "bytes": 1897,
+      "sha256": "5676b8dec549d4eb472c87317c231365b869e6931f7dc578a712157d40991d19"
+    },
+    {
+      "path": "01_data_preprocessing/11_road_distance_part1.zip",
+      "bytes": 3676338,
+      "sha256": "f60bc61b8abe4a6389a464ad987c7a0172cb8b47634e33a5fe28ccd043113f63"
+    },
+    {
+      "path": "01_data_preprocessing/11_road_distance_part2.zip",
+      "bytes": 3661878,
+      "sha256": "d469347972a16a8be0ed1a5748fa187ed4b5c63cdb848d44bd8fb8f8d562bdf5"
+    },
+    {
+      "path": "01_data_preprocessing/12_station_osm_snap.csv",
+      "bytes": 105625,
+      "sha256": "5a92e10b5f9e41e24852e1f4ffc43bd239d7bcf59e89feb32c9bb89aa75aaa00"
+    },
+    {
+      "path": "01_data_preprocessing/13_candidate_pool_v2_PROPOSAL.csv",
+      "bytes": 6142,
+      "sha256": "f2f1e582cf2e58a501e584aa3048e36a4aca17ed2314c4d9efc1de881375441b"
+    },
+    {
+      "path": "01_data_preprocessing/14_candidate_v2_road_distance_matrix_m.csv",
+      "bytes": 11572,
+      "sha256": "2ee324ed07a355dbb78c9f54398a43dbac58dc5aa157f0418742d1185fd610fd"
+    },
+    {
+      "path": "01_data_preprocessing/데이터 수집 및 전처리—성선 415233a79de48067918bcef103c3cc03.md",
+      "bytes": 4744,
+      "sha256": "da77d7b66aaaea5a7ff870366c915c80ba3bdf794b9e1bfb7058c9e73bbeb43a"
+    }
+  ]
+}

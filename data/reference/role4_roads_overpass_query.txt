@@ -1,0 +1,1 @@
+[out:json][timeout:55];(way["highway"~"^(motorway|motorway_link|trunk|trunk_link|primary|primary_link|secondary|secondary_link|tertiary|tertiary_link|unclassified|residential|living_street|service)$"](37.5373901125,126.8815265135,37.6236753028,126.9922243077);>;);out body;

@@ -1,0 +1,169 @@
+{
+  "snapshot_date_kst": "2026-11-15",
+  "source_page": "https://data.seoul.go.kr/dataList/OA-12913/S/1/datasetView.do",
+  "inventory": "data/reference/seodaemun_bus_stops_official.csv",
+  "universe_count": 464,
+  "output": "data/reference/seodaemun_ridership_202605_202610.csv",
+  "sources": [
+    {
+      "month": "202605",
+      "source_page": "https://data.seoul.go.kr/dataList/OA-12913/S/1/datasetView.do",
+      "download_url": "https://datafile.seoul.go.kr/bigfile/iot/inf/nio_download.do?useCache=false&infId=OA-12913&seq=110&infSeq=3",
+      "encoding": "cp949",
+      "raw_bytes": 15798409,
+      "raw_sha256": "071eca2a6a1f5e306a78b3b945c7b62fdaeb1dd6c8ad7647f92f0ca803c665dc",
+      "preserved_path": "data/reference/raw_ridership/seoul_bus_hourly_202605.csv.gz",
+      "source_rows": 43122,
+      "aggregation": "sum route/direction records by standard stop ID; hours 07 and 08 only"
+    },
+    {
+      "month": "202606",
+      "source_page": "https://data.seoul.go.kr/dataList/OA-12913/S/1/datasetView.do",
+      "download_url": "https://datafile.seoul.go.kr/bigfile/iot/inf/nio_download.do?useCache=false&infId=OA-12913&seq=111&infSeq=3",
+      "encoding": "cp949",
+      "raw_bytes": 15767103,
+      "raw_sha256": "0adb483b12cd31351e386625b88a2dba1485dd8d6e4b64b27289b4c03f1fe0d2",
+      "preserved_path": "data/reference/raw_ridership/seoul_bus_hourly_202606.csv.gz",
+      "source_rows": 43064,
+      "aggregation": "sum route/direction records by standard stop ID; hours 07 and 08 only"
+    },
+    {
+      "month": "202607",
+      "source_page": "https://data.seoul.go.kr/dataList/OA-12913/S/1/datasetView.do",
+      "download_url": "https://datafile.seoul.go.kr/bigfile/iot/inf/nio_download.do?useCache=false&infId=OA-12913&seq=112&infSeq=3",
+      "encoding": "cp949",
+      "raw_bytes": 15818975,
+      "raw_sha256": "b5c15e7b5f7756f67794914e5e41521f8b3fc3d1c31523cf808886444ab2e684",
+      "preserved_path": "data/reference/raw_ridership/seoul_bus_hourly_202607.csv.gz",
+      "source_rows": 43171,
+      "aggregation": "sum route/direction records by standard stop ID; hours 07 and 08 only"
+    },
+    {
+      "month": "202608",
+      "source_page": "https://data.seoul.go.kr/dataList/OA-12913/S/1/datasetView.do",
+      "download_url": "https://datafile.seoul.go.kr/bigfile/iot/inf/nio_download.do?useCache=false&infId=OA-12913&seq=113&infSeq=3",
+      "encoding": "cp949",
+      "raw_bytes": 15602085,
+      "raw_sha256": "d7d7875cc88c5e70365cb72bce7b481707cacb64c92f948a6e776b032bccba1c",
+      "preserved_path": "data/reference/raw_ridership/seoul_bus_hourly_202608.csv.gz",
+      "source_rows": 42578,
+      "aggregation": "sum route/direction records by standard stop ID; hours 07 and 08 only"
+    },
+    {
+      "month": "202609",
+      "source_page": "https://data.seoul.go.kr/dataList/OA-12913/S/1/datasetView.do",
+      "download_url": "https://datafile.seoul.go.kr/bigfile/iot/inf/nio_download.do?useCache=false&infId=OA-12913&seq=114&infSeq=3",
+      "encoding": "cp949",
+      "raw_bytes": 15452718,
+      "raw_sha256": "c9400f1f13faa92435d036ba4f7ebd227b4e6ef4558a966c90a4c49f26f5fbe3",
+      "preserved_path": "data/reference/raw_ridership/seoul_bus_hourly_202609.csv.gz",
+      "source_rows": 42155,
+      "aggregation": "sum route/direction records by standard stop ID; hours 07 and 08 only"
+    },
+    {
+      "month": "202610",
+      "source_page": "https://data.seoul.go.kr/dataList/OA-12913/S/1/datasetView.do",
+      "download_url": "https://datafile.seoul.go.kr/bigfile/iot/inf/nio_download.do?useCache=false&infId=OA-12913&seq=115&infSeq=3",
+      "encoding": "cp949",
+      "raw_bytes": 15685495,
+      "raw_sha256": "e5348cbcdfbe3fd33607bcc9b1fb9c92cbc2fa01b4f4ac171f3d46838ced8048",
+      "preserved_path": "data/reference/raw_ridership/seoul_bus_hourly_202610.csv.gz",
+      "source_rows": 42782,
+      "aggregation": "sum route/direction records by standard stop ID; hours 07 and 08 only"
+    }
+  ],
+  "coverage": {
+    "202605": {
+      "observed": 454,
+      "missing_ids": [
+        "101000248",
+        "112000170",
+        "112000372",
+        "112000373",
+        "112000374",
+        "112000375",
+        "112000376",
+        "112000377",
+        "112000440",
+        "113000532"
+      ]
+    },
+    "202606": {
+      "observed": 454,
+      "missing_ids": [
+        "101000248",
+        "112000170",
+        "112000372",
+        "112000373",
+        "112000374",
+        "112000375",
+        "112000376",
+        "112000377",
+        "112000440",
+        "113000532"
+      ]
+    },
+    "202607": {
+      "observed": 454,
+      "missing_ids": [
+        "101000248",
+        "112000170",
+        "112000372",
+        "112000373",
+        "112000374",
+        "112000375",
+        "112000376",
+        "112000377",
+        "112000440",
+        "113000532"
+      ]
+    },
+    "202608": {
+      "observed": 454,
+      "missing_ids": [
+        "101000248",
+        "112000170",
+        "112000372",
+        "112000373",
+        "112000374",
+        "112000375",
+        "112000376",
+        "112000377",
+        "112000440",
+        "113000532"
+      ]
+    },
+    "202609": {
+      "observed": 454,
+      "missing_ids": [
+        "101000248",
+        "112000170",
+        "112000372",
+        "112000373",
+        "112000374",
+        "112000375",
+        "112000376",
+        "112000377",
+        "112000440",
+        "113000532"
+      ]
+    },
+    "202610": {
+      "observed": 454,
+      "missing_ids": [
+        "101000248",
+        "112000170",
+        "112000372",
+        "112000373",
+        "112000374",
+        "112000375",
+        "112000376",
+        "112000377",
+        "112000440",
+        "113000532"
+      ]
+    }
+  },
+  "team_aggregate_mismatch": [],
+  "missing_policy": "empty numeric fields and has_source_record=0; never impute zero"
+}

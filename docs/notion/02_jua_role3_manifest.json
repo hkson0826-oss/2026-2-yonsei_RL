@@ -1,0 +1,86 @@
+{
+  "title": "주아 3번 업무",
+  "source_url": "https://app.notion.com/p/3-417233a79de4807c8f2dc3e8e354b1b1?source=copy_link",
+  "page_id": "417233a7-9de4-807c-8f2d-c3e8e354b1b1",
+  "snapshot_date": "2026-11-15",
+  "timezone": "Asia/Seoul",
+  "method": "Notion native app Export: Markdown & CSV; all content; include subpages enabled",
+  "connector_status": "404 object_not_found in connected agora workspace; recovered through authenticated native Notion app",
+  "export_archive": "02_jua_role3_export.zip",
+  "markdown_file": "02_jua_role3/주아 3번 업무 417233a79de4807c8f2dc3e8e354b1b1.md",
+  "file_count": 14,
+  "attachment_count": 13,
+  "missing_local_image_links": [],
+  "files": [
+    {
+      "path": "02_jua_role3/image 1.png",
+      "bytes": 5134,
+      "sha256": "df073effbcf4bd7f9c060ebea73ab9a95abb3ec17f0adffff76b0933a838433f"
+    },
+    {
+      "path": "02_jua_role3/image 10.png",
+      "bytes": 10136,
+      "sha256": "416d04cd347a1a65ad441322e5b9df9054e8fd0cd4b6728b8e938eb42315f38b"
+    },
+    {
+      "path": "02_jua_role3/image 11.png",
+      "bytes": 7225,
+      "sha256": "00b99e059f337efe4d2688873dbf3b28fb7a8fed8549a4b30530ccbc5112ab4f"
+    },
+    {
+      "path": "02_jua_role3/image 12.png",
+      "bytes": 8322,
+      "sha256": "cad3ebfd4803effcaf91e2991eccc58679f912b491b702ea7c9af892e2854592"
+    },
+    {
+      "path": "02_jua_role3/image 2.png",
+      "bytes": 3126,
+      "sha256": "1bd7ca07dd9aab48355334d4b6c5ded873af0a8b4ad44317e0e54ae485b77c8c"
+    },
+    {
+      "path": "02_jua_role3/image 3.png",
+      "bytes": 5450,
+      "sha256": "4ebc8e82916cf638ed8b92989dd9f3a82e6642bc4cdf0b99fb1d4d94bcd0641f"
+    },
+    {
+      "path": "02_jua_role3/image 4.png",
+      "bytes": 5979,
+      "sha256": "30dbcc6902e887e02a8d29bc5c1eff64615169ef614bbee849aa885e9b28cbb6"
+    },
+    {
+      "path": "02_jua_role3/image 5.png",
+      "bytes": 6606,
+      "sha256": "6764febc76cfa9cad7914b881bb649b2f816aae9d4201193b1a073e42e91dd50"
+    },
+    {
+      "path": "02_jua_role3/image 6.png",
+      "bytes": 10722,
+      "sha256": "c7f37a840e119ce71b73ea48ceb20bb7f087824620c5b1a8542c48aa2e42e2b4"
+    },
+    {
+      "path": "02_jua_role3/image 7.png",
+      "bytes": 3247,
+      "sha256": "69ced87025fd18af53ff1cfec7a04da02c71beb834aad3cebf3e385bf1cf2b4b"
+    },
+    {
+      "path": "02_jua_role3/image 8.png",
+      "bytes": 10934,
+      "sha256": "d5c0367f6914796e42dd6faaf418b4a97b9df97ef5bbf46b4ae68201c77e18da"
+    },
+    {
+      "path": "02_jua_role3/image 9.png",
+      "bytes": 7196,
+      "sha256": "4fa769880e2556384aa2d08228656fdfc127b1f836fba78ff7d03bde910ebd88"
+    },
+    {
+      "path": "02_jua_role3/image.png",
+      "bytes": 10291,
+      "sha256": "509e68fe766573a9a5f27663b16dfc268fe803ffcf4d4d5dfd535187aabd1ac5"
+    },
+    {
+      "path": "02_jua_role3/주아 3번 업무 417233a79de4807c8f2dc3e8e354b1b1.md",
+      "bytes": 30600,
+      "sha256": "a7f7f131cc85057be77daa790ca6ee55d59c1736af53b2bc32e1bf96ecb1a9a7"
+    }
+  ]
+}

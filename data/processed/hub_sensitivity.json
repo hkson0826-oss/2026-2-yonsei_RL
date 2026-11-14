@@ -1,0 +1,139 @@
+[
+  {
+    "radius_m": 200.0,
+    "mapped_stops": 61,
+    "assigned_group_count": 13,
+    "assigned_group_counts": {
+      "ahyeon": 5,
+      "chungjeongno": 9,
+      "dongnimmun": 3,
+      "ewha": 6,
+      "gajwa": 5,
+      "hongik": 1,
+      "hongje": 6,
+      "jeungsan": 3,
+      "muakjae": 2,
+      "seodaemun": 8,
+      "sinchon_gyeongui": 3,
+      "sinchon_line2": 5,
+      "yonsei_front": 5
+    },
+    "multi_group_candidates": 0,
+    "candidate_group_counts": {
+      "ahyeon": 5,
+      "chungjeongno": 9,
+      "dongnimmun": 3,
+      "ewha": 6,
+      "gajwa": 5,
+      "hongik": 1,
+      "hongje": 6,
+      "jeungsan": 3,
+      "muakjae": 2,
+      "seodaemun": 8,
+      "sinchon_gyeongui": 3,
+      "sinchon_line2": 5,
+      "yonsei_front": 5
+    },
+    "unassigned_group_ids": [
+      "aeogae",
+      "dmc",
+      "sogang"
+    ],
+    "no_candidate_group_ids": [
+      "aeogae",
+      "dmc",
+      "sogang"
+    ]
+  },
+  {
+    "radius_m": 300.0,
+    "mapped_stops": 103,
+    "assigned_group_count": 14,
+    "assigned_group_counts": {
+      "ahyeon": 7,
+      "chungjeongno": 12,
+      "dmc": 1,
+      "dongnimmun": 8,
+      "ewha": 7,
+      "gajwa": 8,
+      "hongik": 2,
+      "hongje": 10,
+      "jeungsan": 6,
+      "muakjae": 4,
+      "seodaemun": 16,
+      "sinchon_gyeongui": 5,
+      "sinchon_line2": 8,
+      "yonsei_front": 9
+    },
+    "multi_group_candidates": 0,
+    "candidate_group_counts": {
+      "ahyeon": 7,
+      "chungjeongno": 12,
+      "dmc": 1,
+      "dongnimmun": 8,
+      "ewha": 7,
+      "gajwa": 8,
+      "hongik": 2,
+      "hongje": 10,
+      "jeungsan": 6,
+      "muakjae": 4,
+      "seodaemun": 16,
+      "sinchon_gyeongui": 5,
+      "sinchon_line2": 8,
+      "yonsei_front": 9
+    },
+    "unassigned_group_ids": [
+      "aeogae",
+      "sogang"
+    ],
+    "no_candidate_group_ids": [
+      "aeogae",
+      "sogang"
+    ]
+  },
+  {
+    "radius_m": 500.0,
+    "mapped_stops": 186,
+    "assigned_group_count": 14,
+    "assigned_group_counts": {
+      "ahyeon": 11,
+      "chungjeongno": 15,
+      "dmc": 4,
+      "dongnimmun": 18,
+      "ewha": 10,
+      "gajwa": 13,
+      "hongik": 2,
+      "hongje": 25,
+      "jeungsan": 17,
+      "muakjae": 11,
+      "seodaemun": 26,
+      "sinchon_gyeongui": 8,
+      "sinchon_line2": 12,
+      "yonsei_front": 14
+    },
+    "multi_group_candidates": 36,
+    "candidate_group_counts": {
+      "aeogae": 4,
+      "ahyeon": 12,
+      "chungjeongno": 18,
+      "dmc": 4,
+      "dongnimmun": 18,
+      "ewha": 16,
+      "gajwa": 13,
+      "hongik": 2,
+      "hongje": 25,
+      "jeungsan": 17,
+      "muakjae": 11,
+      "seodaemun": 28,
+      "sinchon_gyeongui": 20,
+      "sinchon_line2": 13,
+      "sogang": 7,
+      "yonsei_front": 20
+    },
+    "unassigned_group_ids": [
+      "aeogae",
+      "sogang"
+    ],
+    "no_candidate_group_ids": []
+  }
+]

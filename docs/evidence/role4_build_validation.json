@@ -1,0 +1,226 @@
+{
+  "summary": {
+    "stop_count": 464,
+    "complete_train_stop_count": 454,
+    "missing_train_stop_count": 10,
+    "observed_zero_train_stop_count": 1,
+    "train_calendar_days": 123,
+    "normalizer_daily_alight": 847.7886178861788,
+    "road_source_covered_stop_count": 292,
+    "available_directed_pairs": 84972,
+    "missing_directed_pairs": 129860,
+    "central_lane_stop_count": 42,
+    "policy_eligible_stop_count": 422,
+    "complete_train_policy_eligible_stop_count": 412,
+    "diagnostic_subset_stop_count": 259,
+    "baseline_stop_count": 282,
+    "anchor_count": 22,
+    "hub_group_count": 16,
+    "default_hub_mapped_stop_count": 103
+  },
+  "readiness": {
+    "reference_complete": true,
+    "reference_map_ready": true,
+    "demand_reference_ready": true,
+    "demand_full": false,
+    "road_full": false,
+    "operational_verified": false,
+    "bus_drivability_verified": false,
+    "full_district_model_ready": false,
+    "existing_train_py_compatible_without_adaptation": false,
+    "interpretation": "Reference and partial input handoff only; not verified service or complete district model input"
+  },
+  "hub_sensitivity": [
+    {
+      "radius_m": 200.0,
+      "mapped_stops": 61,
+      "assigned_group_count": 13,
+      "assigned_group_counts": {
+        "ahyeon": 5,
+        "chungjeongno": 9,
+        "dongnimmun": 3,
+        "ewha": 6,
+        "gajwa": 5,
+        "hongik": 1,
+        "hongje": 6,
+        "jeungsan": 3,
+        "muakjae": 2,
+        "seodaemun": 8,
+        "sinchon_gyeongui": 3,
+        "sinchon_line2": 5,
+        "yonsei_front": 5
+      },
+      "multi_group_candidates": 0,
+      "candidate_group_counts": {
+        "ahyeon": 5,
+        "chungjeongno": 9,
+        "dongnimmun": 3,
+        "ewha": 6,
+        "gajwa": 5,
+        "hongik": 1,
+        "hongje": 6,
+        "jeungsan": 3,
+        "muakjae": 2,
+        "seodaemun": 8,
+        "sinchon_gyeongui": 3,
+        "sinchon_line2": 5,
+        "yonsei_front": 5
+      },
+      "unassigned_group_ids": [
+        "aeogae",
+        "dmc",
+        "sogang"
+      ],
+      "no_candidate_group_ids": [
+        "aeogae",
+        "dmc",
+        "sogang"
+      ]
+    },
+    {
+      "radius_m": 300.0,
+      "mapped_stops": 103,
+      "assigned_group_count": 14,
+      "assigned_group_counts": {
+        "ahyeon": 7,
+        "chungjeongno": 12,
+        "dmc": 1,
+        "dongnimmun": 8,
+        "ewha": 7,
+        "gajwa": 8,
+        "hongik": 2,
+        "hongje": 10,
+        "jeungsan": 6,
+        "muakjae": 4,
+        "seodaemun": 16,
+        "sinchon_gyeongui": 5,
+        "sinchon_line2": 8,
+        "yonsei_front": 9
+      },
+      "multi_group_candidates": 0,
+      "candidate_group_counts": {
+        "ahyeon": 7,
+        "chungjeongno": 12,
+        "dmc": 1,
+        "dongnimmun": 8,
+        "ewha": 7,
+        "gajwa": 8,
+        "hongik": 2,
+        "hongje": 10,
+        "jeungsan": 6,
+        "muakjae": 4,
+        "seodaemun": 16,
+        "sinchon_gyeongui": 5,
+        "sinchon_line2": 8,
+        "yonsei_front": 9
+      },
+      "unassigned_group_ids": [
+        "aeogae",
+        "sogang"
+      ],
+      "no_candidate_group_ids": [
+        "aeogae",
+        "sogang"
+      ]
+    },
+    {
+      "radius_m": 500.0,
+      "mapped_stops": 186,
+      "assigned_group_count": 14,
+      "assigned_group_counts": {
+        "ahyeon": 11,
+        "chungjeongno": 15,
+        "dmc": 4,
+        "dongnimmun": 18,
+        "ewha": 10,
+        "gajwa": 13,
+        "hongik": 2,
+        "hongje": 25,
+        "jeungsan": 17,
+        "muakjae": 11,
+        "seodaemun": 26,
+        "sinchon_gyeongui": 8,
+        "sinchon_line2": 12,
+        "yonsei_front": 14
+      },
+      "multi_group_candidates": 36,
+      "candidate_group_counts": {
+        "aeogae": 4,
+        "ahyeon": 12,
+        "chungjeongno": 18,
+        "dmc": 4,
+        "dongnimmun": 18,
+        "ewha": 16,
+        "gajwa": 13,
+        "hongik": 2,
+        "hongje": 25,
+        "jeungsan": 17,
+        "muakjae": 11,
+        "seodaemun": 28,
+        "sinchon_gyeongui": 20,
+        "sinchon_line2": 13,
+        "sogang": 7,
+        "yonsei_front": 20
+      },
+      "unassigned_group_ids": [
+        "aeogae",
+        "sogang"
+      ],
+      "no_candidate_group_ids": []
+    }
+  ],
+  "zero_distance_pairs": [
+    {
+      "from_station_id": "112900003",
+      "to_station_id": "112900157"
+    }
+  ],
+  "source_hashes": {
+    "stops": {
+      "path": "data/reference/seodaemun_bus_stops_official.csv",
+      "sha256": "a5a81d2d4ba8558163041f542084e66d11ce5f19f0775ae7f564b7699f2a2ef0"
+    },
+    "ridership": {
+      "path": "data/reference/seodaemun_ridership_202605_202610.csv",
+      "sha256": "1ee5a943c2305ab577b5db542ff709762ce0c230fbf51296ea9b724151d9e046"
+    },
+    "hub_anchors": {
+      "path": "data/reference/hub_anchors_official.csv",
+      "sha256": "dec74521c373b1ea15444c704916041a9d339717e2903dd02f18d6692b44caf6"
+    },
+    "roads": {
+      "path": "data/processed/road_distances_full.json",
+      "sha256": "43dc00908b7af6d3709b7ef30896e90ae70a03dcf8b03894091b6b39a2c6ff62"
+    },
+    "road_snap": {
+      "path": "data/processed/road_snap.csv",
+      "sha256": "dda2817055eb6c9cc70c6daa359b4f58ab2ac2de190b88d8a74497730f8c55fb"
+    },
+    "ridership_provenance": {
+      "path": "data/reference/ridership_provenance.json",
+      "sha256": "c4c35e4595c04ff6d9fbc21cf8f02a4820e724856047ce9630a9c3e696f47d98"
+    },
+    "spatial_provenance": {
+      "path": "data/reference/spatial_sources.json",
+      "sha256": "a66e30d9d66c1db168b1d501a1d124724d2a84a1d8bf5fc0a90db77ff1526260"
+    }
+  },
+  "output_sha256": {
+    "role4_bundle.json": "fea1ede06d0e3df102dcd822341efeaf232b05cbf5ca6dfc8469f6ab2d498510",
+    "stop_master.csv": "9e94f5bd9a6570cc825390eda6c935b3d24201101ec6fefd12d03c2203cf4481",
+    "ridership.csv": "40c49e0728087f3d5bf97b13744fa49b55216fe070de4ba497fd4f107731103a",
+    "hub_mapping.csv": "5b77923aefd56fff8e4e77c5fec404e7a866c3479244c3a1e64bda9e3f1acf65",
+    "hub_sensitivity.json": "930a0899dd0bf06e96cdc0b359d78a52c3f3bc73570557c495b6a203b9f053e4",
+    "diagnostic_259.json": "f02ddddf4ba0c11e80b4669a7a26e7ffd4e04df030f163c4730838dc88919719"
+  },
+  "checks": [
+    "unique official IDs and ARS13",
+    "monthly ID coverage/split/day consistency",
+    "observed zero distinct from missing",
+    "hourly sum equals monthly sum",
+    "pooled123 and fixed global max",
+    "road ID/order/value validation",
+    "deterministic single nearest hub mapping",
+    "expected source counts independently computed"
+  ]
+}

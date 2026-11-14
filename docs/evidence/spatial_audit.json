@@ -1,0 +1,77 @@
+{
+  "snapshot_date_kst": "2026-11-15",
+  "official_source_date": "2026-09-02",
+  "official_all_seoul_rows": 11236,
+  "official_node112_count": 449,
+  "official_ARS13_count": 464,
+  "district_membership": "ARS_ID prefix13; corroborated official OA22187 20260930 district table; not polygon containment",
+  "official_ARS13_node_non112_count": 15,
+  "baseline_count": 282,
+  "baseline_coverage_fraction": 0.6077586206896551,
+  "baseline_missing_official_count": 182,
+  "original808_official_overlap_count": 292,
+  "original808_missing_official_count": 172,
+  "original808_coverage_fraction": 0.6293103448275862,
+  "official_type_counts": {
+    "중앙차로": 42,
+    "일반차로": 173,
+    "마을버스": 243,
+    "가로변시간": 2,
+    "가로변전일": 4
+  },
+  "original_overlap_type_counts": {
+    "중앙차로": 33,
+    "일반차로": 125,
+    "가로변전일": 4,
+    "마을버스": 130
+  },
+  "source112_noncentral_count": 259,
+  "official_all_noncentral_count": 422,
+  "official_bounds": {
+    "latitude": [
+      37.5553901125,
+      37.6056753028
+    ],
+    "longitude": [
+      126.9045265135,
+      126.9692243077
+    ]
+  },
+  "road_input_rows": 652056,
+  "road_covered_stop_count": 292,
+  "road_available_directed_pairs": 84972,
+  "road_expected_pairs_within_overlap": 84972,
+  "road_expected_pairs_full_official": 214832,
+  "road_missing_pairs_full_official": 129860,
+  "road_invalid_in_overlap": 0,
+  "zero_road_pairs_in_overlap": [
+    {
+      "from_station_id": "112900003",
+      "to_station_id": "112900157",
+      "road_m": 0.0,
+      "straight_m": "24.4"
+    }
+  ],
+  "source_overlap_snap_quality": {
+    "ok": 267,
+    "unverified": 5,
+    "check": 20
+  },
+  "source_files": [
+    {
+      "path": "data/reference/kric_urban_rail_stations_20260630.xlsx",
+      "bytes": 313132,
+      "sha256": "cdf1d84a7e5c898b2aacd622783ba8ba9af35c40bee0561dc97d55ce8e063f94"
+    },
+    {
+      "path": "data/reference/seoul_bus_route_inventory_20260930.xlsx",
+      "bytes": 671583,
+      "sha256": "91c2dab3c2a188c4da19d153184e911e8b6fb07b62e3e9dc3cc331155282ecfd"
+    },
+    {
+      "path": "data/reference/seoul_bus_stops_20260902.xlsx",
+      "bytes": 741052,
+      "sha256": "73eb0a5f4fd0f6128237b5e23fa361fd1c6d8a31a83bcee2884e6a48481852bb"
+    }
+  ]
+}

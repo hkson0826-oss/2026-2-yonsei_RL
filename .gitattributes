@@ -1,0 +1,8 @@
+* text=auto eol=lf
+# Preserve source snapshots and reproducibility hashes byte-for-byte.
+data/** -text
+docs/notion/** -text
+*.png -text
+*.zip -text
+*.gz -text
+*.xlsx -text

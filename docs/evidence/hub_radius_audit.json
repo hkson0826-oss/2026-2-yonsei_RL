@@ -1,0 +1,82 @@
+{
+  "scope": "all464 officialARS13 stops; straightline min over official anchors; nearestgroup only",
+  "earth_radius_m": 6371000,
+  "rows": [
+    {
+      "radius_m": 200,
+      "mapped_stops": 61,
+      "multi_group_candidates": 0,
+      "assigned_group_counts": {
+        "ahyeon": 5,
+        "chungjeongno": 9,
+        "dongnimmun": 3,
+        "ewha": 6,
+        "gajwa": 5,
+        "hongik": 1,
+        "hongje": 6,
+        "jeungsan": 3,
+        "muakjae": 2,
+        "seodaemun": 8,
+        "sinchon_gyeongui": 3,
+        "sinchon_line2": 5,
+        "yonsei_front": 5
+      },
+      "unassigned_group_ids": [
+        "aeogae",
+        "dmc",
+        "sogang"
+      ]
+    },
+    {
+      "radius_m": 300,
+      "mapped_stops": 103,
+      "multi_group_candidates": 0,
+      "assigned_group_counts": {
+        "ahyeon": 7,
+        "chungjeongno": 12,
+        "dmc": 1,
+        "dongnimmun": 8,
+        "ewha": 7,
+        "gajwa": 8,
+        "hongik": 2,
+        "hongje": 10,
+        "jeungsan": 6,
+        "muakjae": 4,
+        "seodaemun": 16,
+        "sinchon_gyeongui": 5,
+        "sinchon_line2": 8,
+        "yonsei_front": 9
+      },
+      "unassigned_group_ids": [
+        "aeogae",
+        "sogang"
+      ]
+    },
+    {
+      "radius_m": 500,
+      "mapped_stops": 186,
+      "multi_group_candidates": 36,
+      "assigned_group_counts": {
+        "ahyeon": 11,
+        "chungjeongno": 15,
+        "dmc": 4,
+        "dongnimmun": 18,
+        "ewha": 10,
+        "gajwa": 13,
+        "hongik": 2,
+        "hongje": 25,
+        "jeungsan": 17,
+        "muakjae": 11,
+        "seodaemun": 26,
+        "sinchon_gyeongui": 8,
+        "sinchon_line2": 12,
+        "yonsei_front": 14
+      },
+      "unassigned_group_ids": [
+        "aeogae",
+        "sogang"
+      ]
+    }
+  ],
+  "interpretation": "spatial definition sensitivity only, not route/model performance"
+}

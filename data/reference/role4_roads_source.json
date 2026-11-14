@@ -1,0 +1,19 @@
+{
+  "status": "acquisition_failed",
+  "errors": [
+    {
+      "endpoint": "https://overpass-api.de/api/interpreter",
+      "error": "406 Client Error: Not Acceptable for url: https://overpass-api.de/api/interpreter"
+    },
+    {
+      "endpoint": "https://overpass.kumi.systems/api/interpreter",
+      "error": "429 Client Error: Too Many Requests for url: https://overpass.kumi.systems/api/interpreter"
+    }
+  ],
+  "bbox_south_west_north_east": [
+    37.5373901125,
+    126.8815265135,
+    37.6236753028,
+    126.9922243077
+  ]
+}

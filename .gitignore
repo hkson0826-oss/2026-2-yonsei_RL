@@ -2,3 +2,8 @@ __pycache__/
 .venv/
 runs/
 .DS_Store
+node_modules/
+.pytest_cache/
+tmp/
+docs/research/papers/*.pdf
+docs/research/papers/*.txt

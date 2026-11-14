@@ -1,0 +1,12 @@
+{
+  "name": "yonsei-rl-role4-reference",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Local DOM verification for the role-4 reference map; no model training",
+  "scripts": {
+    "test:map": "node tests/test_role4_map.cjs"
+  },
+  "devDependencies": {
+    "jsdom": "29.1.1"
+  }
+}

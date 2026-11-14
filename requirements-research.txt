@@ -1,0 +1,4 @@
+# Research auditing/tests only; core bundle/map builders use the standard library.
+pandas==3.0.5
+openpyxl==3.1.5
+pytest==8.4.1

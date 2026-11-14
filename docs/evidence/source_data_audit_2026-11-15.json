@@ -1,0 +1,195 @@
+{
+  "snapshot_date_kst": "2026-11-15",
+  "raw_stop_count": 808,
+  "prefix_counts": {
+    "100": 43,
+    "101": 20,
+    "102": 68,
+    "111": 2,
+    "112": 282,
+    "113": 393
+  },
+  "raw_112_id_count": 282,
+  "network_equals_all_112_in_raw": true,
+  "raw_bounds": {
+    "lat": [
+      37.5370716239,
+      37.5819344759
+    ],
+    "lon": [
+      126.9060056297,
+      126.9709244565
+    ]
+  },
+  "raw_112_not_stoppable": [
+    {
+      "id": "112000003",
+      "name": "DMC래미안e편한세상.요진아파트",
+      "type": "중앙차로"
+    },
+    {
+      "id": "112000004",
+      "name": "DMC래미안e편한세상.요진아파트",
+      "type": "중앙차로"
+    },
+    {
+      "id": "112000005",
+      "name": "모래내시장.가좌역",
+      "type": "중앙차로"
+    },
+    {
+      "id": "112000006",
+      "name": "모래내시장.가좌역",
+      "type": "중앙차로"
+    },
+    {
+      "id": "112000007",
+      "name": "사천교",
+      "type": "중앙차로"
+    },
+    {
+      "id": "112000008",
+      "name": "연희104고지앞.궁동근린공원",
+      "type": "중앙차로"
+    },
+    {
+      "id": "112000009",
+      "name": "연희104고지앞.궁동근린공원",
+      "type": "중앙차로"
+    },
+    {
+      "id": "112000010",
+      "name": "서대문우체국",
+      "type": "중앙차로"
+    },
+    {
+      "id": "112000011",
+      "name": "서대문우체국",
+      "type": "중앙차로"
+    },
+    {
+      "id": "112000012",
+      "name": "연세대앞",
+      "type": "중앙차로"
+    },
+    {
+      "id": "112000013",
+      "name": "연세대앞",
+      "type": "중앙차로"
+    },
+    {
+      "id": "112000014",
+      "name": "세브란스병원앞",
+      "type": "중앙차로"
+    },
+    {
+      "id": "112000015",
+      "name": "세브란스병원앞",
+      "type": "중앙차로"
+    },
+    {
+      "id": "112000016",
+      "name": "이대후문",
+      "type": "중앙차로"
+    },
+    {
+      "id": "112000017",
+      "name": "이대후문",
+      "type": "중앙차로"
+    },
+    {
+      "id": "112000399",
+      "name": "경찰청.동북아역사재단",
+      "type": "중앙차로"
+    },
+    {
+      "id": "112000400",
+      "name": "무악재역",
+      "type": "중앙차로"
+    },
+    {
+      "id": "112000401",
+      "name": "독립문역.한성과학고",
+      "type": "중앙차로"
+    },
+    {
+      "id": "112000402",
+      "name": "독립문역.한성과학고",
+      "type": "중앙차로"
+    },
+    {
+      "id": "112000403",
+      "name": "서대문역",
+      "type": "중앙차로"
+    },
+    {
+      "id": "112000404",
+      "name": "안산초등학교",
+      "type": "중앙차로"
+    },
+    {
+      "id": "112000429",
+      "name": "충정로역",
+      "type": "중앙차로"
+    },
+    {
+      "id": "112000430",
+      "name": "충정로역",
+      "type": "중앙차로"
+    }
+  ],
+  "monthly_row_count": 4848,
+  "ridership_missing_source_count": 0,
+  "alight_sum_mismatch_count": 0,
+  "snapshot_quality_112": {
+    "ok": 261,
+    "check": 17,
+    "unverified": 4
+  },
+  "validation_notes": [
+    {
+      "issue": "road_drivability_not_verified",
+      "affected_file": "03_region_existing_route_edges_provisional.csv",
+      "description": "All retained connections come from existing bus line sequence; actual new-route road feasibility has not been independently checked.",
+      "status": "partially_resolved",
+      "resolution": "11_road_distance_matrix_808_OSM.csv.gz now gives OSM road distance for every station pair; turn restrictions and bus suitability of narrow roads still not verified."
+    },
+    {
+      "issue": "distance_direction_semantics_not_verified",
+      "affected_file": "03_region_existing_route_edges_provisional.csv",
+      "description": "Distance assumed to belong to destination row of original route master; confirm before final routing.",
+      "status": "resolved",
+      "resolution": "OSM comparison: forward-direction median abs error 9.9 m vs 272 m if reversed, so distance-on-destination-row assumption holds."
+    },
+    {
+      "issue": "calendar_day_average_and_no_weekday_split",
+      "affected_file": "02_region_ridership_7to9_monthly.csv",
+      "description": "Monthly hourly sums cannot distinguish weekday vs weekend; daily mean divides by calendar days.",
+      "status": "resolved",
+      "resolution": "02 now has weekday_factor, weekday_avg_07_09_est (A) and weekday_avg_07_09_upper (B) from daily data OA-12912; 2026-10-27 missing in source and excluded from factor."
+    },
+    {
+      "issue": "candidate_graph_may_change",
+      "affected_file": "05_candidate_edges_41_PRELIMINARY.csv",
+      "description": "Five candidate connections were removed; re-evaluate reachability and path options.",
+      "status": "superseded",
+      "resolution": "Use 14/15 full road-distance matrices instead of 05 adjacency edges; 13 is a 40-station proposal excluding median-busway stops."
+    },
+    {
+      "issue": "apartment_internal_roads_missing",
+      "affected_file": "11_road_distance_matrix_808_OSM.csv.gz",
+      "description": "Stops inside apartment complexes (단지내) sit on private roads not in OSM drive network, so distances to/from them can be overestimated.",
+      "status": "open",
+      "resolution": "See 12_station_osm_snap.csv distance_quality=check (62 stations)."
+    },
+    {
+      "issue": "turn_restrictions_ignored",
+      "affected_file": "11_road_distance_matrix_808_OSM.csv.gz",
+      "description": "Turn restrictions and U-turn legality are not modelled, so some road distances may be shorter than real bus paths.",
+      "status": "open",
+      "resolution": ""
+    }
+  ],
+  "rebuilt_network_byte_identical": true,
+  "rebuild_output": "../analysis_notes/rebuilt_network.json"
+}

@@ -1,0 +1,23 @@
+{
+  "method": "Node jsdom DOM simulation; no browser navigation, screenshots, network or layout certification",
+  "passed": 14,
+  "checks": [
+    "initial reference renders 464 geographic markers",
+    "all reference coordinates and radii finite",
+    "missing-only filter renders 10 without inventing zero",
+    "diagnostic subset labelled separately renders 259",
+    "central-lane visibility policy preserves full source",
+    "500m radius changes mapping count to 186",
+    "search matches station ID and selection populates monthly values",
+    "validation period keeps raw score above one",
+    "same stop cannot become a valid 0m move",
+    "non-diagonal source 0m retained and warned",
+    "unknown directed pair yields undefined reward",
+    "candidate exclusion is distinguished from arithmetic",
+    "zoom and reset change and restore geographic viewport",
+    "no map script runtime errors"
+  ],
+  "errors": [],
+  "browser_visual_layout_verified": false,
+  "offline_data_rendered": true
+}

@@ -1,0 +1,50 @@
+{
+  "retrieval_date_kst": "2026-11-15",
+  "sources": [
+    {
+      "source_id": "OA-15067",
+      "title": "서울시 버스정류소 위치정보",
+      "page_url": "https://data.seoul.go.kr/dataList/OA-15067/S/1/datasetView.do",
+      "download_url": "https://datafile.seoul.go.kr/bigfile/iot/inf/nio_download.do?useCache=false&infId=OA-15067&seq=58&infSeq=1",
+      "snapshot": "2026-09-02",
+      "local_path": "data/reference/seoul_bus_stops_20260902.xlsx",
+      "role": "official stop inventory and bus access coordinates",
+      "bytes": 741052,
+      "sha256": "73eb0a5f4fd0f6128237b5e23fa361fd1c6d8a31a83bcee2884e6a48481852bb"
+    },
+    {
+      "source_id": "OA-22187",
+      "title": "서울시 시내버스 정류소 현황",
+      "page_url": "https://data.seoul.go.kr/dataList/OA-22187/F/1/datasetView.do",
+      "download_url": "https://datafile.seoul.go.kr/bigfile/iot/inf/nio_download.do?useCache=false&infId=OA-22187&seq=8&infSeq=1",
+      "snapshot": "2026-09-30",
+      "local_path": "data/reference/seoul_bus_route_inventory_20260930.xlsx",
+      "role": "ARS13 to Seodaemun district mapping; city bus table is narrower than all-stop inventory",
+      "bytes": 671583,
+      "sha256": "91c2dab3c2a188c4da19d153184e911e8b6fb07b62e3e9dc3cc331155282ecfd"
+    },
+    {
+      "source_id": "KRIC-32",
+      "title": "전체_도시철도역사정보_20260630",
+      "page_url": "https://data.kric.go.kr/rips/M_01_01/detail.do?id=32",
+      "download_url": "https://data.kric.go.kr/rips/dataset/download.file?type=filedata&id=32&operation=1",
+      "snapshot": "2026-06-30 release; individual record dates vary and are preserved in anchor CSV",
+      "local_path": "data/reference/kric_urban_rail_stations_20260630.xlsx",
+      "role": "authoritative rail station reference coordinates and line identification, not entrances",
+      "bytes": 313132,
+      "sha256": "cdf1d84a7e5c898b2aacd622783ba8ba9af35c40bee0561dc97d55ce8e063f94"
+    }
+  ],
+  "selection": {
+    "stops": "ARS_ID padded to5 digits and first2==13; NODE prefix NOT used as sole district criterion",
+    "rail_anchors": "station point within500m haversine of at least one officialARS13 bus stop; candidate screen not final hub threshold",
+    "yonsei_anchors": "three named official Yonsei-front bus stop points; no campus gate geometry claim"
+  },
+  "derived_files": [
+    "data/reference/seodaemun_bus_stops_official.csv",
+    "data/reference/seodaemun_missing_from_original808.csv",
+    "data/reference/hub_anchors_official.csv"
+  ],
+  "reproduce": "python scripts/audit_role4.py",
+  "dependencies": "Python standard library and openpyxl for read-only XLSX extraction"
+}
