@@ -1,6 +1,6 @@
 {
   "method": "Node jsdom DOM simulation; no browser navigation, screenshots, network or layout certification",
-  "passed": 14,
+  "passed": 20,
   "checks": [
     "initial reference renders 464 geographic markers",
     "all reference coordinates and radii finite",
@@ -15,6 +15,12 @@
     "unknown directed pair yields undefined reward",
     "candidate exclusion is distinguished from arithmetic",
     "zoom and reset change and restore geographic viewport",
+    "all24actual road options preserved without shrinking464universe",
+    "selectedroadline uses all original geometry vertices not a straight substitute",
+    "same-response routercostandduration distinguished fromlegacy cost",
+    "reverse cachedroad has independently recorded metrics",
+    "allcachedroads overlay remains24independent paths",
+    "profileweightnotelapsedtimecorrectlyshown",
     "no map script runtime errors"
   ],
   "errors": [],

@@ -1,0 +1,156 @@
+{
+  "review_date_kst": "2026-11-15",
+  "scope": "Evidence-grounded reward critical review only; no model implementation/training/performance experiments",
+  "source_count": 5,
+  "research_paper_count": 4,
+  "official_methodology_count": 1,
+  "sources": [
+    {
+      "id": "E1",
+      "authors": [
+        "Andrew Y. Ng",
+        "Daishi Harada",
+        "Stuart Russell"
+      ],
+      "year": 1999,
+      "title": "Policy Invariance Under Reward Transformations: Theory and Application to Reward Shaping",
+      "venue": "ICML 1999",
+      "pages": "278–287",
+      "url": "https://people.eecs.berkeley.edu/~russell/papers/icml99-shaping.pdf",
+      "alternate_checked_url": "https://people.eecs.berkeley.edu/~pabbeel/cs287-fa09/readings/NgHaradaRussell-shaping-ICML1999.pdf",
+      "read_scope": [
+        "PDF page3: episodic absorbing-state and proper-policy assumptions",
+        "PDF pages4–5: Section3 Theorem1, Corollary2 and sufficiency proof"
+      ],
+      "verification": "Original university-hosted paper; garbled text extraction supplemented by direct visual rendering of PDF pages3–5",
+      "supports": [
+        "Distinguish objective changes from policy-preserving reward shaping",
+        "Potential difference theorem requires terminal/regularity conditions"
+      ],
+      "does_not_support": [
+        "Universal transit reward coefficients",
+        "Claim all legitimate objective components must preserve a different original policy"
+      ],
+      "application_inference": "Visited-hub increment can have nonterminal potential-difference form at gamma1; path-dependent terminal potential means current finite return changes preferences",
+      "full_paper_or_experiments_reproduced": false
+    },
+    {
+      "id": "E2",
+      "authors": [
+        "Chandra Chekuri",
+        "Martin Pál"
+      ],
+      "year": 2005,
+      "title": "A Recursive Greedy Algorithm for Walks in Directed Graphs",
+      "venue": "FOCS 2005",
+      "pages": "245–253",
+      "doi": "10.1109/SFCS.2005.9",
+      "url": "https://chekuri.cs.illinois.edu/papers/orienteering.pdf",
+      "bibliography_verification": "https://chekuri.cs.illinois.edu/pub.html",
+      "read_scope": [
+        "PDF pages1–2: directed orienteering, budgets, first-visit profit, submodularity, monotonicity and SOP definitions",
+        "PDF page3: scope and applications"
+      ],
+      "supports": [
+        "Budgeted set-valued reward formulation",
+        "Marginal and diminishing-return reward alternative"
+      ],
+      "does_not_support": [
+        "Specific alighting-demand or walking-radius estimate",
+        "Approximation guarantee for current RL model, negative path penalties or incomplete road matrix"
+      ],
+      "application_inference": "Weighted-max coverage is a separately defined mathematical proxy; needs spatial units and weights; not new passenger counts",
+      "full_paper_or_experiments_reproduced": false
+    },
+    {
+      "id": "E3",
+      "authors": [
+        "Abdulkerim Benli",
+        "İbrahim Akgün"
+      ],
+      "year": 2023,
+      "title": "A Multi-Objective Mathematical Programming Model for Transit Network Design and Frequency Setting Problem",
+      "venue": "Mathematics 11(21),4488",
+      "doi": "10.3390/math11214488",
+      "url": "https://www.mdpi.com/2227-7390/11/21/4488",
+      "read_scope": [
+        "Section3.1: OD, network/path and passenger cost definitions",
+        "Section3.2: Equations1–6 passenger/operator objectives; constraints10–11 route stop bounds",
+        "Section4: epsilon-constraint Equation24 and rationale"
+      ],
+      "supports": [
+        "Separate passenger and agency objectives",
+        "Expose trade-offs through component objectives and explicit constraints"
+      ],
+      "does_not_support": [
+        "Copying fleet/passenger cost computations without OD/frequency/capacity",
+        "Calibrating our hub/distance weights or Seoul minimum-stop count"
+      ],
+      "application_inference": "Use raw objective-vector reporting; legacy scalar is explicit policy baseline, not validated operational welfare",
+      "full_paper_or_experiments_reproduced": false
+    },
+    {
+      "id": "E4",
+      "authors": [
+        "Andrew Holliday",
+        "Ahmed El-Geneidy",
+        "Gregory Dudek"
+      ],
+      "year": 2025,
+      "title": "Learning Heuristics for Transit Network Design and Improvement with Deep Reinforcement Learning",
+      "version": "arXiv2404.05894v6",
+      "doi": "10.1080/21680566.2025.2561863",
+      "url": "https://arxiv.org/html/2404.05894v6",
+      "read_scope": [
+        "Section3 route feasibility constraints and symmetric network assumptions",
+        "Section3.1 Equations4–11 passenger costs, operation costs, constraint violation, scale and trade-off"
+      ],
+      "supports": [
+        "Separating rescaling from preference trade-off",
+        "Reporting component metrics alongside unified objective",
+        "Distinguishing OD-weighted travel time from stop-activity proxy"
+      ],
+      "does_not_support": [
+        "Copying objective coefficients into alight-only directed model",
+        "Proof that normalization alone balances actual sample distributions"
+      ],
+      "application_inference": "Current bundle distribution and implicit exchange-rates must be reported even after normalization",
+      "full_paper_or_experiments_reproduced": false
+    },
+    {
+      "id": "E5",
+      "authors": [
+        "Transport for London"
+      ],
+      "year": 2015,
+      "title": "Assessing transport connectivity in London",
+      "kind": "Official agency methodology; not a research paper",
+      "url": "https://content.tfl.gov.uk/connectivity-assessment-guide.pdf",
+      "read_scope": [
+        "Printed pages6–7: PTAL meaning and limits",
+        "Printed pages18–19 Table2.1: walking network, waiting/frequency and repeated same-service treatment",
+        "Printed page40: interpretation of multiple connectivity measures"
+      ],
+      "supports": [
+        "Connectivity/access components and limitations",
+        "Distinguish physical walking/service assumptions from simple proximity",
+        "Consider multiple metrics rather than one opaque score"
+      ],
+      "does_not_support": [
+        "300m Seoul walking or transfer threshold",
+        "Using PTAL weighting0.5 as our hub bonus calibration",
+        "Calling our hub proxy PTAL"
+      ],
+      "application_inference": "Retain straight-line proximity label and explicit coverage/operational limits",
+      "full_paper_or_experiments_reproduced": false
+    }
+  ],
+  "recommendation": {
+    "primary_reporting": "raw component objective vector",
+    "legacy_scalar_status": "uncalibrated_policy_baseline_not_optimized_or_literature_calibrated",
+    "coverage_alternative": "separate weighted-max set proxy with marginal gains and explicit data requirements",
+    "stopping": "explicit contract; free terminal does not imply voluntary STOP; minimum service condition separate",
+    "no_new_optimal_weights_inferred": true
+  },
+  "local_full_text_distribution": "Private optional PDFs in ignored papers folder; publish source links and read scope only"
+}

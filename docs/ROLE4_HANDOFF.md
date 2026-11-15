@@ -2,6 +2,10 @@
 
 버전: `role4-bundle-1.0` / 기준일 2026-11-15. [설계 명세](research/DATA_REWARD_SPEC.md), [설정](../data/role4_config.json), [연구 결과](ROLE4_FINAL_REPORT.md)를 함께 확인한다.
 
+추가 인계: [실제 도로 경로 24개](../data/routes/v1/routes.geojson), [동일 경로 비용·품질 표](../data/routes/v1/route_metrics.csv), [경로 원천·재현](research/SELECTED_ROUTES_METHOD.md), [보상 재검토](research/REWARD_EVIDENCE_REVIEW.md), [v2 보고·종료 계약](../data/reward_contract_v2.json).
+
+지도에서 **저장된 실제 도로 경로**를 선택하거나 **저장 도로구간 전체 표시**를 켜면 캐시의 실제 도로선을 표시한다. 청록색 전체 표시는 서로 독립적인 대표 구간들이며 하나의 학습·최적화 노선이 아니다. 기존 통합 JSON은 보존하고 생성 HTML에 선택 경로 자료와 보상 해석 계약을 별도 필드로 추가했다.
+
 ## 먼저 알아야 할 준비 상태
 
 공식 ARS 지역 코드 13의 정류장 464개를 모두 보존했다. 5–10월 수요는 매월 454개 관측·10개 결측이며, 방향별 도로비용은 292개 내부에서만 관측됐다. 전체 기준의 도로거리 129,860쌍은 `null`이다. **전체 지역의 모델 입력 준비 상태는 false다.** 지도와 데이터 참조 완성은 학습 준비·최적 노선·실제 운행 검증과 다르다.
@@ -36,6 +40,21 @@ python -m pytest tests -q
 ```
 
 지도 DOM 기능 검증은 `npm ci` 후 `npm run test:map`으로 실행한다. 14개 검사는 실제 브라우저 화면 배치·스크린샷 검수가 아니라 오프라인 DOM 동작 검사다. 선택적인 정적 미리보기는 [map_preview.png](../output/role4/map_preview.png)다.
+
+선택 경로 확장 후 DOM 검사는 20개다. [도로선 정적 미리보기](../output/role4/road_route_preview.png)는 실제 경로 좌표를 그린 그림이며 브라우저 화면 캡처는 아니다. 선택 경로의 재생성·품질 확인은 외부 호출 없이 다음을 실행한다.
+
+```powershell
+python scripts/fetch_selected_routes.py --offline
+python scripts/validate_route_geometry.py
+python scripts/audit_reward_tradeoffs.py
+python scripts/build_role4_map.py
+```
+
+`--fetch`는 정책 제한을 갖춘 별도 취득 모드이며 기본 재생성에는 필요하지 않다. 공개 서버를 학습 도중 호출하지 않는다. 프로파일 `routability` 가중치와 추정시간을 구별하며, 새 도로 자료를 기존 292개 행렬에 섞지 않는다.
+
+## 보상 v2 연결의 의미
+
+주 보고는 원시 하차 활동·고유 근접 그룹·거리·추정시간·정차 수·가용성이다. 이는 DQN에 바로 넣을 단일 보상이 아니며 선호·가중합·제약의 연결은 외부 모델 담당자가 명시해야 한다. 기존 0.5·0.2는 미보정 정책 기준안이고, 자동차 시간 항을 임의로 더하지 않았다. optional STOP은 0단계 경로도 허용하는 수학적 대안으로 명시했으며, 실제 비어 있지 않은 버스 노선에 필요한 최소 서비스 조건은 자료로 확정하지 못했다. 기존 모델의 강제 연장 종료는 변경하지 않았다.
 
 지도 파일 경로는 `output/role4/station_map.html`이다. 지도 빌드는 별도 스크립트이며 데이터 빌드는 지도를 자동으로 학습하거나 노선을 생성하지 않는다.
 

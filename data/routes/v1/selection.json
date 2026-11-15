@@ -1,0 +1,512 @@
+{
+  "scope": "12 predetermined diagnostic pairs in both directions; no route order optimization",
+  "official_reference_count": 464,
+  "directed_pair_count": 24,
+  "max_network_requests_per_acquisition": 24,
+  "pairs": [
+    {
+      "route_id": "112000031__112900230",
+      "from_station_id": "112000031",
+      "to_station_id": "112900230",
+      "from_station_name": "연세대학교앞",
+      "to_station_name": "신촌전철역",
+      "selection_reason": "Yonsei front to Sinchon subway",
+      "input_coordinates": [
+        [
+          126.9353063323,
+          37.5598189289
+        ],
+        [
+          126.9371485343,
+          37.5553901125
+        ]
+      ],
+      "cache_key": "5fe4c65e67ea9f47d85698ca5c62cb05afb2eaed3f6700d12b20c38877f0121a",
+      "meta_path": "data/routes/v1/responses/112000031__112900230.meta.json",
+      "response_path": "data/routes/v1/responses/112000031__112900230.response.json"
+    },
+    {
+      "route_id": "112900230__112000031",
+      "from_station_id": "112900230",
+      "to_station_id": "112000031",
+      "from_station_name": "신촌전철역",
+      "to_station_name": "연세대학교앞",
+      "selection_reason": "Yonsei front to Sinchon subway",
+      "input_coordinates": [
+        [
+          126.9371485343,
+          37.5553901125
+        ],
+        [
+          126.9353063323,
+          37.5598189289
+        ]
+      ],
+      "cache_key": "326ba5e68f1022f5e43985cb0fc1d8852584d24b22bbadcf7dc45e63fa365a02",
+      "meta_path": "data/routes/v1/responses/112900230__112000031.meta.json",
+      "response_path": "data/routes/v1/responses/112900230__112000031.response.json"
+    },
+    {
+      "route_id": "112900188__112000057",
+      "from_station_id": "112900188",
+      "to_station_id": "112000057",
+      "from_station_name": "연대앞.세브란스병원",
+      "to_station_name": "이대역4번출구",
+      "selection_reason": "Yonsei hospital front to Ewha subway",
+      "input_coordinates": [
+        [
+          126.9355917024,
+          37.5602943607
+        ],
+        [
+          126.9465754208,
+          37.5569841725
+        ]
+      ],
+      "cache_key": "31d596bed1031ed8f9fec42fda02af759ca5a84065e866656baec700fce2448d",
+      "meta_path": "data/routes/v1/responses/112900188__112000057.meta.json",
+      "response_path": "data/routes/v1/responses/112900188__112000057.response.json"
+    },
+    {
+      "route_id": "112000057__112900188",
+      "from_station_id": "112000057",
+      "to_station_id": "112900188",
+      "from_station_name": "이대역4번출구",
+      "to_station_name": "연대앞.세브란스병원",
+      "selection_reason": "Yonsei hospital front to Ewha subway",
+      "input_coordinates": [
+        [
+          126.9465754208,
+          37.5569841725
+        ],
+        [
+          126.9355917024,
+          37.5602943607
+        ]
+      ],
+      "cache_key": "8c8bad25092ce9b965d12dc8bc77a0548a0dc62f5f3c6028933343f6c181f867",
+      "meta_path": "data/routes/v1/responses/112000057__112900188.meta.json",
+      "response_path": "data/routes/v1/responses/112000057__112900188.response.json"
+    },
+    {
+      "route_id": "112000057__112000054",
+      "from_station_id": "112000057",
+      "to_station_id": "112000054",
+      "from_station_name": "이대역4번출구",
+      "to_station_name": "충정로역2번출구",
+      "selection_reason": "Ewha to Chungjeongno station access",
+      "input_coordinates": [
+        [
+          126.9465754208,
+          37.5569841725
+        ],
+        [
+          126.9640265994,
+          37.5596112723
+        ]
+      ],
+      "cache_key": "7678b85c5531030860930a486a36e1b4af7709f05cfc84fe199b80917bea05a8",
+      "meta_path": "data/routes/v1/responses/112000057__112000054.meta.json",
+      "response_path": "data/routes/v1/responses/112000057__112000054.response.json"
+    },
+    {
+      "route_id": "112000054__112000057",
+      "from_station_id": "112000054",
+      "to_station_id": "112000057",
+      "from_station_name": "충정로역2번출구",
+      "to_station_name": "이대역4번출구",
+      "selection_reason": "Ewha to Chungjeongno station access",
+      "input_coordinates": [
+        [
+          126.9640265994,
+          37.5596112723
+        ],
+        [
+          126.9465754208,
+          37.5569841725
+        ]
+      ],
+      "cache_key": "f023bcaae7de9e8dfc8b3b03231b4eb0b8fc1acd975da323776f17417c00a62b",
+      "meta_path": "data/routes/v1/responses/112000054__112000057.meta.json",
+      "response_path": "data/routes/v1/responses/112000054__112000057.response.json"
+    },
+    {
+      "route_id": "112900054__112000167",
+      "from_station_id": "112900054",
+      "to_station_id": "112000167",
+      "from_station_name": "서대문전철역",
+      "to_station_name": "독립문역·서대문형무소역사관",
+      "selection_reason": "Seodaemun to Dongnimmun corridor",
+      "input_coordinates": [
+        [
+          126.9659992155,
+          37.5652797325
+        ],
+        [
+          126.9564326063,
+          37.5754192746
+        ]
+      ],
+      "cache_key": "b46d074bd70138d941a39b3d75f53a80f0c0ff862c831a8164f0366f82d041f3",
+      "meta_path": "data/routes/v1/responses/112900054__112000167.meta.json",
+      "response_path": "data/routes/v1/responses/112900054__112000167.response.json"
+    },
+    {
+      "route_id": "112000167__112900054",
+      "from_station_id": "112000167",
+      "to_station_id": "112900054",
+      "from_station_name": "독립문역·서대문형무소역사관",
+      "to_station_name": "서대문전철역",
+      "selection_reason": "Seodaemun to Dongnimmun corridor",
+      "input_coordinates": [
+        [
+          126.9564326063,
+          37.5754192746
+        ],
+        [
+          126.9659992155,
+          37.5652797325
+        ]
+      ],
+      "cache_key": "d9bd24caaa95384c965a0be392094fe1a460fbe827fea584cad0a7434b4125a3",
+      "meta_path": "data/routes/v1/responses/112000167__112900054.meta.json",
+      "response_path": "data/routes/v1/responses/112000167__112900054.response.json"
+    },
+    {
+      "route_id": "112000167__112000398",
+      "from_station_id": "112000167",
+      "to_station_id": "112000398",
+      "from_station_name": "독립문역·서대문형무소역사관",
+      "to_station_name": "무악재역",
+      "selection_reason": "Dongnimmun to Muakjae northern extension",
+      "input_coordinates": [
+        [
+          126.9564326063,
+          37.5754192746
+        ],
+        [
+          126.9498097936,
+          37.5831543142
+        ]
+      ],
+      "cache_key": "55d7ea847a20475b8fe8a05545273a9c06b247db139da786c5754c0509440813",
+      "meta_path": "data/routes/v1/responses/112000167__112000398.meta.json",
+      "response_path": "data/routes/v1/responses/112000167__112000398.response.json"
+    },
+    {
+      "route_id": "112000398__112000167",
+      "from_station_id": "112000398",
+      "to_station_id": "112000167",
+      "from_station_name": "무악재역",
+      "to_station_name": "독립문역·서대문형무소역사관",
+      "selection_reason": "Dongnimmun to Muakjae northern extension",
+      "input_coordinates": [
+        [
+          126.9498097936,
+          37.5831543142
+        ],
+        [
+          126.9564326063,
+          37.5754192746
+        ]
+      ],
+      "cache_key": "04ae0e47e0fede84abd11bce6ad018250015059ad4f245956e5161d3234e8a38",
+      "meta_path": "data/routes/v1/responses/112000398__112000167.meta.json",
+      "response_path": "data/routes/v1/responses/112000398__112000167.response.json"
+    },
+    {
+      "route_id": "112000398__112000413",
+      "from_station_id": "112000398",
+      "to_station_id": "112000413",
+      "from_station_name": "무악재역",
+      "to_station_name": "홍제역3번출구",
+      "selection_reason": "Muakjae to Hongje northern extension",
+      "input_coordinates": [
+        [
+          126.9498097936,
+          37.5831543142
+        ],
+        [
+          126.9442328155,
+          37.5884321956
+        ]
+      ],
+      "cache_key": "62e22f795b5c2b38c68ce47e6b11ae361d62c0eb9bf731cc94c2e5b1306cb7e8",
+      "meta_path": "data/routes/v1/responses/112000398__112000413.meta.json",
+      "response_path": "data/routes/v1/responses/112000398__112000413.response.json"
+    },
+    {
+      "route_id": "112000413__112000398",
+      "from_station_id": "112000413",
+      "to_station_id": "112000398",
+      "from_station_name": "홍제역3번출구",
+      "to_station_name": "무악재역",
+      "selection_reason": "Muakjae to Hongje northern extension",
+      "input_coordinates": [
+        [
+          126.9442328155,
+          37.5884321956
+        ],
+        [
+          126.9498097936,
+          37.5831543142
+        ]
+      ],
+      "cache_key": "cd950a9edf84df6a0c71c67f33b5a7446bd313e0daba31a84e70ac28b378bad2",
+      "meta_path": "data/routes/v1/responses/112000413__112000398.meta.json",
+      "response_path": "data/routes/v1/responses/112000413__112000398.response.json"
+    },
+    {
+      "route_id": "112000413__112000424",
+      "from_station_id": "112000413",
+      "to_station_id": "112000424",
+      "from_station_name": "홍제역3번출구",
+      "to_station_name": "홍제역4번출구",
+      "selection_reason": "Hongje different exit-side short movement",
+      "input_coordinates": [
+        [
+          126.9442328155,
+          37.5884321956
+        ],
+        [
+          126.943082762,
+          37.5893732847
+        ]
+      ],
+      "cache_key": "a97839d2318cf2ca59ad96512928ff2cc8bb72cdbcdd3ac97c9f49cf2de891a7",
+      "meta_path": "data/routes/v1/responses/112000413__112000424.meta.json",
+      "response_path": "data/routes/v1/responses/112000413__112000424.response.json"
+    },
+    {
+      "route_id": "112000424__112000413",
+      "from_station_id": "112000424",
+      "to_station_id": "112000413",
+      "from_station_name": "홍제역4번출구",
+      "to_station_name": "홍제역3번출구",
+      "selection_reason": "Hongje different exit-side short movement",
+      "input_coordinates": [
+        [
+          126.943082762,
+          37.5893732847
+        ],
+        [
+          126.9442328155,
+          37.5884321956
+        ]
+      ],
+      "cache_key": "dd7781b065a54942c0117d4154bb8d988eb2b64cbb27809af312d7c91d98ea67",
+      "meta_path": "data/routes/v1/responses/112000424__112000413.meta.json",
+      "response_path": "data/routes/v1/responses/112000424__112000413.response.json"
+    },
+    {
+      "route_id": "112000424__112000039",
+      "from_station_id": "112000424",
+      "to_station_id": "112000039",
+      "from_station_name": "홍제역4번출구",
+      "to_station_name": "홍은동동부센트레빌",
+      "selection_reason": "Hongje to northern residential area",
+      "input_coordinates": [
+        [
+          126.943082762,
+          37.5893732847
+        ],
+        [
+          126.9387082438,
+          37.5967569936
+        ]
+      ],
+      "cache_key": "dbeeb55f6ef08bbf3c60be2ee7c39a13d9c9bf33274d23a01e31136d81c75c15",
+      "meta_path": "data/routes/v1/responses/112000424__112000039.meta.json",
+      "response_path": "data/routes/v1/responses/112000424__112000039.response.json"
+    },
+    {
+      "route_id": "112000039__112000424",
+      "from_station_id": "112000039",
+      "to_station_id": "112000424",
+      "from_station_name": "홍은동동부센트레빌",
+      "to_station_name": "홍제역4번출구",
+      "selection_reason": "Hongje to northern residential area",
+      "input_coordinates": [
+        [
+          126.9387082438,
+          37.5967569936
+        ],
+        [
+          126.943082762,
+          37.5893732847
+        ]
+      ],
+      "cache_key": "185d00141861fd7cc40ca71520a1ba4216fc8ccc8930b3412afebecf6ef024a0",
+      "meta_path": "data/routes/v1/responses/112000039__112000424.meta.json",
+      "response_path": "data/routes/v1/responses/112000039__112000424.response.json"
+    },
+    {
+      "route_id": "112000039__112900116",
+      "from_station_id": "112000039",
+      "to_station_id": "112900116",
+      "from_station_name": "홍은동동부센트레빌",
+      "to_station_name": "홍은동국민주택",
+      "selection_reason": "Northern residential and internal-road screening",
+      "input_coordinates": [
+        [
+          126.9387082438,
+          37.5967569936
+        ],
+        [
+          126.9498503303,
+          37.6056753028
+        ]
+      ],
+      "cache_key": "1deb5943a4b0c6a20217ff4a0bb6d37c2bdebad14bbf2beb9cb2dfc578cb7686",
+      "meta_path": "data/routes/v1/responses/112000039__112900116.meta.json",
+      "response_path": "data/routes/v1/responses/112000039__112900116.response.json"
+    },
+    {
+      "route_id": "112900116__112000039",
+      "from_station_id": "112900116",
+      "to_station_id": "112000039",
+      "from_station_name": "홍은동국민주택",
+      "to_station_name": "홍은동동부센트레빌",
+      "selection_reason": "Northern residential and internal-road screening",
+      "input_coordinates": [
+        [
+          126.9498503303,
+          37.6056753028
+        ],
+        [
+          126.9387082438,
+          37.5967569936
+        ]
+      ],
+      "cache_key": "a0f7b3cd321bd5805f021f926090bfc916ba7e373949b2723df892cf47ab7118",
+      "meta_path": "data/routes/v1/responses/112900116__112000039.meta.json",
+      "response_path": "data/routes/v1/responses/112900116__112000039.response.json"
+    },
+    {
+      "route_id": "112900003__112900157",
+      "from_station_id": "112900003",
+      "to_station_id": "112900157",
+      "from_station_name": "뜨란채아파트101동",
+      "to_station_name": "뜨란채아파트101동",
+      "selection_reason": "Original distinct-stop zero-distance snap pair",
+      "input_coordinates": [
+        [
+          126.9587733457,
+          37.565837009
+        ],
+        [
+          126.958513127,
+          37.5659098551
+        ]
+      ],
+      "cache_key": "a55ceaf8722fa1ba85daa0e5cf56c02f694b9c2347b9179f67b8aeded5e2edf9",
+      "meta_path": "data/routes/v1/responses/112900003__112900157.meta.json",
+      "response_path": "data/routes/v1/responses/112900003__112900157.response.json"
+    },
+    {
+      "route_id": "112900157__112900003",
+      "from_station_id": "112900157",
+      "to_station_id": "112900003",
+      "from_station_name": "뜨란채아파트101동",
+      "to_station_name": "뜨란채아파트101동",
+      "selection_reason": "Original distinct-stop zero-distance snap pair",
+      "input_coordinates": [
+        [
+          126.958513127,
+          37.5659098551
+        ],
+        [
+          126.9587733457,
+          37.565837009
+        ]
+      ],
+      "cache_key": "3918dfedaabe18401dd20feb15711058dde21533e793addd9b6c76e3a53172bf",
+      "meta_path": "data/routes/v1/responses/112900157__112900003.meta.json",
+      "response_path": "data/routes/v1/responses/112900157__112900003.response.json"
+    },
+    {
+      "route_id": "112900031__112900052",
+      "from_station_id": "112900031",
+      "to_station_id": "112900052",
+      "from_station_name": "홍은중학교",
+      "to_station_name": "홍은유원아파트",
+      "selection_reason": "Hilly residential/apartment corridor",
+      "input_coordinates": [
+        [
+          126.9347015063,
+          37.5926714357
+        ],
+        [
+          126.9450463638,
+          37.5969649835
+        ]
+      ],
+      "cache_key": "9ddcfbff48b84901bccde0982fe49047f04754ab987476d01287b0563325498b",
+      "meta_path": "data/routes/v1/responses/112900031__112900052.meta.json",
+      "response_path": "data/routes/v1/responses/112900031__112900052.response.json"
+    },
+    {
+      "route_id": "112900052__112900031",
+      "from_station_id": "112900052",
+      "to_station_id": "112900031",
+      "from_station_name": "홍은유원아파트",
+      "to_station_name": "홍은중학교",
+      "selection_reason": "Hilly residential/apartment corridor",
+      "input_coordinates": [
+        [
+          126.9450463638,
+          37.5969649835
+        ],
+        [
+          126.9347015063,
+          37.5926714357
+        ]
+      ],
+      "cache_key": "147369b28a86409d9a6458af4289dd4cfd83ab0292468f36fbc4e9c901a9a6fd",
+      "meta_path": "data/routes/v1/responses/112900052__112900031.meta.json",
+      "response_path": "data/routes/v1/responses/112900052__112900031.response.json"
+    },
+    {
+      "route_id": "112000073__112000125",
+      "from_station_id": "112000073",
+      "to_station_id": "112000125",
+      "from_station_name": "서대문구청.보건소.구의회",
+      "to_station_name": "서대문구청",
+      "selection_reason": "District office close directional access",
+      "input_coordinates": [
+        [
+          126.9360659508,
+          37.5782448388
+        ],
+        [
+          126.934871913,
+          37.5790506621
+        ]
+      ],
+      "cache_key": "a9ef43209b5d84876dca9403f549fd2af57172ca3dc924a17d2d72c19b54adf5",
+      "meta_path": "data/routes/v1/responses/112000073__112000125.meta.json",
+      "response_path": "data/routes/v1/responses/112000073__112000125.response.json"
+    },
+    {
+      "route_id": "112000125__112000073",
+      "from_station_id": "112000125",
+      "to_station_id": "112000073",
+      "from_station_name": "서대문구청",
+      "to_station_name": "서대문구청.보건소.구의회",
+      "selection_reason": "District office close directional access",
+      "input_coordinates": [
+        [
+          126.934871913,
+          37.5790506621
+        ],
+        [
+          126.9360659508,
+          37.5782448388
+        ]
+      ],
+      "cache_key": "ee9d6f773ec7585211ba7d3d0658acd1a7cec0fec43b0957fc143ec9ef21908e",
+      "meta_path": "data/routes/v1/responses/112000125__112000073.meta.json",
+      "response_path": "data/routes/v1/responses/112000125__112000073.response.json"
+    }
+  ]
+}

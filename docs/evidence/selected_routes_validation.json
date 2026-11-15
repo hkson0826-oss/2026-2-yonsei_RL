@@ -1,0 +1,36 @@
+{
+  "schema_version": "selected-routes-validation-1.0",
+  "scope": "selected directed route observations, not the full district matrix",
+  "feature_count": 24,
+  "requested_directed_count": 24,
+  "thresholds": {
+    "snap_review_m": 30.0,
+    "snap_large_m": 100.0,
+    "endpoint_gap_m": 3.0,
+    "length_relative_tolerance": 0.02,
+    "length_absolute_tolerance_m": 5.0
+  },
+  "flagged_route_ids": [],
+  "zero_distance_route_ids": [],
+  "max_recomputed_snap_distance_m": 15.998572717631882,
+  "max_geometry_api_distance_difference_m": 3.1346714145038277,
+  "route_weight_names": [
+    "routability"
+  ],
+  "routing_weight_differs_from_duration_route_ids": [
+    "112000073__112000125"
+  ],
+  "directed_ids_and_official_coordinates_verified": true,
+  "original_response_hashes_and_route_metrics_verified": true,
+  "all_geometry_and_costs_from_same_response": true,
+  "full_district_model_ready": false,
+  "bus_feasibility_verified": false,
+  "minimum_duration_verified": false,
+  "shortest_distance_verified": false,
+  "duration_kind": "car_profile_estimate_not_observed_bus_peak_time",
+  "limitations": [
+    "No actual bus access/turn/curb validation",
+    "Independent route pairs do not prove continuous multi-stop driving",
+    "Selected route geometry does not complete all464 costs"
+  ]
+}

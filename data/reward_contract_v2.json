@@ -1,0 +1,102 @@
+{
+  "schema_version": "role4-reward-contract-2.0",
+  "decision_status": "C_reviewed_proxy_handoff_coefficients_still_uncalibrated",
+  "scope": "historical stop-activity and proximity proxy handoff; not a trained policy or service-benefit estimate",
+  "evidence_review": "docs/research/REWARD_EVIDENCE_REVIEW.md",
+  "evidence_sources": "docs/research/reward_evidence_sources.json",
+  "tradeoff_audit": "docs/evidence/reward_tradeoff_audit.json",
+  "reporting_priority": "raw_components_before_scalar",
+  "components": [
+    {
+      "name": "historical_alight_daily_sum",
+      "unit": "historical alight records/day",
+      "definition": "sum pooled training daily alight activity at newly stopped IDs, excluding initial stop",
+      "interpretation": "activity proxy; not unique passengers, OD or new ridership"
+    },
+    {
+      "name": "normalized_activity_sum",
+      "unit": "fixed training scale points",
+      "definition": "same visited-stop sum divided by the frozen complete-training reference maximum"
+    },
+    {
+      "name": "distinct_proximity_hub_groups",
+      "unit": "groups",
+      "definition": "newly visited assigned groups; initial stop group already visited",
+      "interpretation": "straight-line proximity preference; not demonstrated transfer benefit"
+    },
+    {
+      "name": "distance_m",
+      "unit": "metres",
+      "definition": "sum known directed costs from one explicitly named path/cost version",
+      "missing_policy": "undefined if a required directed cost is absent; never zero-fill"
+    },
+    {
+      "name": "router_estimated_duration_s",
+      "unit": "seconds",
+      "definition": "same-response profile estimates only when every required route is cached",
+      "interpretation": "car-profile estimates, not observed 07-09 bus time; no dwell-time claim",
+      "scalar_weight": null
+    },
+    {
+      "name": "stop_count",
+      "unit": "stops",
+      "definition": "newly stopped IDs excluding the initial stop",
+      "interpretation": "reported operational proxy; not automatically a passenger benefit or an added penalty"
+    },
+    {
+      "name": "data_coverage_and_quality",
+      "definition": "observed/missing demand, known/unknown costs, source version and measurable quality flags"
+    }
+  ],
+  "scalar_baseline": {
+    "status": "uncalibrated_policy_baseline_not_recommended_as_validated_optimum",
+    "formula": "normalized_activity_sum + 0.5 * distinct_proximity_hub_groups - 0.2 * distance_m / 1000",
+    "demand_weight": 1.0,
+    "hub_bonus": 0.5,
+    "distance_cost_per_km": 0.2,
+    "coefficient_evidence": "no primary source establishes these values for this population",
+    "bonus_distance_equivalent_km": 2.5,
+    "bonus_in_median_eligible_stop_scores": 32.07566902491541,
+    "changes_inference_objective": true,
+    "policy_invariance_guaranteed": false,
+    "new_duration_penalty_added": false
+  },
+  "learner_integration": {
+    "vector_is_not_automatically_a_DQN_scalar_reward": true,
+    "scalarization_owner": "external model team",
+    "required_declarations": [
+      "objective and preferences",
+      "scalarization or constraints",
+      "termination contract",
+      "cost and geometry source version"
+    ],
+    "pareto_front_computed": false,
+    "model_implementation_changed": false,
+    "model_training_performed": false
+  },
+  "termination": {
+    "recommended_free_endpoint_contract": "optional_stop_with_zero_terminal_increment",
+    "stop_after_initial_state_allowed_in_mathematical_proxy": true,
+    "empty_route_can_win_when_all_continuations_are_negative": true,
+    "minimum_service_constraint": null,
+    "minimum_service_status": "not identified from available data; required before claiming an operational nontrivial bus route",
+    "legacy_train_py_contract": "forced_extension_until_no_valid_move; no STOP action",
+    "legacy_contract_automatically_changed": false,
+    "fixed_goal_alternative": "declare goal, feasibility, budget, and terminal-score inclusion in a separate model contract"
+  },
+  "coverage_alternative": {
+    "status": "documented_mathematical_alternative_not_adopted_as_observed_ridership",
+    "definition": "F(S)=sum_z w_z * max({0} union {a_zi:i in S}); F(empty)=0; marginal gain F(S union {j})-F(S)",
+    "required_new_definitions": [
+      "spatial units z",
+      "nonnegative weights w_z",
+      "access values a_zi",
+      "walking or straight-line semantics"
+    ],
+    "unique_passengers_measured": false,
+    "nonnegative_weights_and_access_required": true
+  },
+  "full_district_model_ready": false,
+  "bus_feasibility_verified": false,
+  "actual_professor_approval_claimed": false
+}

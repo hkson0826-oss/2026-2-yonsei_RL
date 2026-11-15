@@ -1,0 +1,46 @@
+{
+  "date_kst": "2026-11-15",
+  "source_bundle_sha256": "fea1ede06d0e3df102dcd822341efeaf232b05cbf5ca6dfc8469f6ab2d498510",
+  "method": "descriptive scale and analytic examples only; no policy search or training",
+  "hub_bonus": 0.5,
+  "distance_cost_per_km": 0.2,
+  "hub_bonus_distance_equivalent_km": 2.5,
+  "groups": {
+    "all_train_observed": {
+      "n": 454,
+      "median_score": 0.019548706342660968,
+      "max_score": 1.0,
+      "max_station_id": "112000403",
+      "max_station_name": "서대문역",
+      "hub_bonus_in_median_stop_scores": 25.57714005396124,
+      "median_score_distance_equivalent_m": 97.74353171330485
+    },
+    "noncentral_train_observed": {
+      "n": 412,
+      "median_score": 0.0155881393966129,
+      "max_score": 0.6839697731065039,
+      "max_station_id": "112000413",
+      "max_station_name": "홍제역3번출구",
+      "hub_bonus_in_median_stop_scores": 32.07566902491541,
+      "median_score_distance_equivalent_m": 77.9406969830645
+    },
+    "diagnostic_source_subset": {
+      "n": 259,
+      "median_score": 0.019563090968373005,
+      "max_score": 0.45442950574426055,
+      "max_station_id": "112000033",
+      "max_station_name": "세브란스병원",
+      "hub_bonus_in_median_stop_scores": 25.55833333333333,
+      "median_score_distance_equivalent_m": 97.81545484186502
+    }
+  },
+  "analytic_examples": {
+    "dense_five_score_0_2_same_1km": 0.8,
+    "single_score_0_7_same_1km": 0.49999999999999994,
+    "negative_continuation_score_0_01_extra_500m": -0.09000000000000001,
+    "stop_terminal_increment": 0,
+    "new_hub_score_0_4_500m": 0.8,
+    "same_hub_score_0_4_500m": 0.30000000000000004,
+    "interpretation": "objective meaning and termination distinctions; no algorithm performance claim"
+  }
+}

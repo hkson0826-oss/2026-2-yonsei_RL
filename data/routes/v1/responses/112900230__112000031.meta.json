@@ -1,0 +1,38 @@
+{
+  "route_id": "112900230__112000031",
+  "cache_key": "326ba5e68f1022f5e43985cb0fc1d8852584d24b22bbadcf7dc45e63fa365a02",
+  "request_url": "https://router.project-osrm.org/route/v1/driving/126.9371485343,37.5553901125;126.9353063323,37.5598189289?alternatives=false&geometries=geojson&overview=full&steps=true&annotations=distance%2Cduration&generate_hints=false&approaches=curb%3Bcurb",
+  "retrieved_at": "2026-11-15T02:30:54.160847+00:00",
+  "from_station_id": "112900230",
+  "to_station_id": "112000031",
+  "input_coordinates": [
+    [
+      126.9371485343,
+      37.5553901125
+    ],
+    [
+      126.9353063323,
+      37.5598189289
+    ]
+  ],
+  "parameters": {
+    "alternatives": "false",
+    "geometries": "geojson",
+    "overview": "full",
+    "steps": "true",
+    "annotations": "distance,duration",
+    "generate_hints": "false",
+    "approaches": "curb;curb"
+  },
+  "profile": "driving/car",
+  "routing_objective": "car_profile_routing_weight_not_distance_minimum",
+  "endpoint": "https://router.project-osrm.org",
+  "source_policy_url": "https://github.com/Project-OSRM/osrm-backend/wiki/Demo-server",
+  "http_status": 200,
+  "fetch_status": "response_saved",
+  "response_sha256": "7ffb1e84e85e16f5d671ec094b8314be5da2871f41afaae7702d30e3f5f1ee7e",
+  "response_bytes": 9620,
+  "objective_interpretation_note": "Corrected after inspecting actual provider weight_name=routability and one weight/duration mismatch; original response bytes unchanged.",
+  "minimum_duration_verified": false,
+  "shortest_distance_verified": false
+}

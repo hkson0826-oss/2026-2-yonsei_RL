@@ -10,6 +10,12 @@ review gates, scope, and research-only journal. Then read the relevant sections 
 3. `docs/research/REVIEWS.md`
 4. `docs/research/RESEARCH_LOG.md`
 
+Current reward interpretation is refined by `data/reward_contract_v2.json` and
+`docs/research/REWARD_EVIDENCE_REVIEW.md`: report raw components first; the old
+0.5/0.2 scalar is an uncalibrated policy baseline, not a validated recommendation.
+Optional STOP and legacy forced extension are different handoff contracts. The
+vector is not automatically a scalar reward usable by an existing learner.
+
 The working repository is `hkson0826-oss/2026-2-yonsei_RL`. The original model was
 provided from `Gyuhongcho/26-2-RL`; preserve its attribution and existing model
 behavior. Inspect remotes before any publication. Never force-push or overwrite
@@ -59,6 +65,11 @@ and handoff to the model and presentation owners.
   and the flagged non-diagonal 0m source value. A diagonal 0 does not prove coverage.
 - Do not fill unknown costs with straight-line distance, symmetrize costs, or
   describe source costs as verified bus-feasible roads.
+- `data/routes/v1/` separately preserves 24 actual directed road observations.
+  Geometry, distance, duration and weight come from the same OSRM response.
+  The reported weight is `routability`: do not claim independently verified
+  shortest-distance or minimum-duration paths. Time is a car-profile estimate,
+  not observed peak-hour bus time. Never mix these costs into the old matrix.
 - Whole-district model readiness remains **false** while required demand or road
   inputs are missing. A 259-stop diagnostic subset is not the final full-region
   experiment population. Data readiness and legal/physical drivability are separate.
@@ -83,6 +94,10 @@ python scripts/audit_role4.py
 python scripts/compare_role4_demand.py
 python scripts/fetch_role4_ridership.py
 python scripts/build_role4_roads.py
+python scripts/fetch_selected_routes.py --offline
+python scripts/validate_route_geometry.py
+python scripts/audit_reward_tradeoffs.py
+python scripts/build_role4_map.py
 python -m pytest tests -q
 ```
 
